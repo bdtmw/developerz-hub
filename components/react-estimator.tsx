@@ -3,8 +3,8 @@
 import { useState } from 'react';
 
 const plans = {
-  junior: { name: 'Junior team', rate: 20, includes: 'React developer + project manager' },
-  senior: { name: 'Senior team', rate: 50, includes: 'Senior React developer + technical project manager + professional tester' },
+  junior: { name: 'Junior team', rate: 20, includes: 'Certified React developer + certified project manager' },
+  senior: { name: 'Senior team', rate: 50, includes: 'Certified senior React developer + certified technical project manager + certified tester' },
 };
 const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', maximumFractionDigits: 2 });
 
@@ -35,7 +35,7 @@ export default function ReactEstimator() {
     <div className="estimate-summary">
       <p className="eyebrow">ESTIMATED PROJECT COST</p>
       <div role="status" aria-live="polite" aria-atomic="true"><p className="estimate-total">{total === null ? '—' : currency.format(total)}<span>USD</span></p><p>{valid ? `${parsed.toLocaleString('en-US')} hours × $${plan.rate}/hour` : 'Add your expected hours to calculate a budget.'}</p></div>
-      <p className="estimate-included">Project management included</p>
+      <p className="estimate-included">Certified project management included</p>
       <dl className="estimate-comparison"><div><dt>Junior team · $20/hr</dt><dd>{valid ? currency.format(parsed * 20) : '—'}</dd></div><div><dt>Senior team · $50/hr</dt><dd>{valid ? currency.format(parsed * 50) : '—'}</dd></div></dl>
       <p className="estimate-note">This is a planning estimate based on the hours you enter. Final hours, scope and start date are agreed before development begins.</p>
       {total !== null ? <a className="button" href={`mailto:info@developerzhub.com?subject=${encodeURIComponent('React project estimate — ' + plan.name)}&body=${encodeURIComponent(enquiry)}`}>Discuss this estimate ↗</a> : <span className="estimate-help">Enter valid hours to prepare your enquiry.</span>}
