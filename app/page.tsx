@@ -1,3 +1,4 @@
+import ClientReviews from '@/components/client-reviews';
 import Link from 'next/link';
 import { ExpertiseCards } from '@/components/expertise-cards';
 import { CodeScreen } from '@/components/code-screen';
@@ -58,6 +59,7 @@ export default function Home() {
         </dl>
       </div>
     </section>
+    <ClientReviews/>
     <section id="approach" className="vision-section section"><p className="eyebrow">WHO WE ARE</p><h2>We connect your vision<br/>with the craft to <em>bring it to life.</em></h2><div className="vision-bottom"><span className="vision-mark" aria-hidden="true">{'{ }'}</span><p>Human ideas. Thoughtful engineering.<br/>A collaborative approach, from the first conversation<br className="desktop-break"/> to your next release.</p><Link href="/contact/" className="circle-link" aria-label="Start a project with Developerz Hub">↗</Link></div></section>
     <section className="immersive-panel"><img src="/new-perspectives.webp" srcSet="/new-perspectives-480.webp 480w, /new-perspectives-800.webp 800w, /new-perspectives.webp 1122w" sizes="100vw" decoding="async" alt="A small explorer looking toward a monumental pink and purple sculpture" width="1122" height="1402" loading="lazy"/><div><p className="eyebrow">A NEW PERSPECTIVE</p><h2>Build beyond<br/><em>the expected.</em></h2><Link href="/hire-full-stack-developers/" className="button light">Explore full-stack development <span>↗</span></Link></div></section>
     <section className="section process-editorial"><div><p className="eyebrow">FROM IDEA TO EXPERIENCE</p><h2>Big thinking.<br/><em>Clear next steps.</em></h2></div><div className="process"><div><span>01</span><h3>Discover the possibilities</h3><p>Define your audience, your priorities, and the problem worth solving.</p></div><div><span>02</span><h3>Make the idea tangible</h3><p>Translate an agreed scope into working software you can review.</p></div><div><span>03</span><h3>Create the next chapter</h3><p>Test, prepare the handover, and plan the next iteration with purpose.</p></div></div></section>
