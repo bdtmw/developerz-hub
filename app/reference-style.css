@@ -51,10 +51,12 @@ html{scroll-padding-top:110px}.button{background:#d91b76}.button:hover{backgroun
 
 /* Hero: scrolling code as a full-section background */
 .editorial-hero{position:relative;overflow:hidden}
-.code-screen{position:absolute;inset:-12% -4%;padding-left:5%;overflow:hidden;transform:rotate(-7deg);opacity:.19;color:#cdbfdc;font:clamp(11px,1.72vw,30px)/1.75 ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(180deg,transparent 4%,#000 22%,#000 72%,transparent 96%);mask-image:linear-gradient(180deg,transparent 4%,#000 22%,#000 72%,transparent 96%)}
-.code-scroll{animation:code-run 60s linear infinite}
+.code-screen{position:absolute;inset:-12% -6%;display:flex;gap:56px;overflow:hidden;transform:rotate(-7deg);opacity:.17;color:#cdbfdc;font:12px/1.6 ui-monospace,SFMono-Regular,Consolas,'Liberation Mono',monospace;pointer-events:none;z-index:0;-webkit-mask-image:linear-gradient(180deg,transparent 4%,#000 22%,#000 72%,transparent 96%);mask-image:linear-gradient(180deg,transparent 4%,#000 22%,#000 72%,transparent 96%)}
+.code-col{flex:1 0 0;min-width:0;overflow:hidden}
+.code-scroll{animation:code-run 34s linear infinite}
 .code-line{white-space:pre}
 .code-screen .k{color:#ff5fae}.code-screen .s{color:#b9a2ff}.code-screen .c{color:#8a7799;font-style:italic}.code-screen .f{color:#f6e9ff}.code-screen .n{color:#ffb38a}
 @keyframes code-run{to{transform:translateY(-25%)}}
 @media(prefers-reduced-motion:reduce){.code-scroll{animation:none}}
-@media(max-width:760px){.code-screen{padding-left:4%;opacity:.14}}
+@media(max-width:1100px){.code-col:nth-child(4){display:none}}
+@media(max-width:760px){.code-screen{font-size:9px;gap:28px;opacity:.16}.code-col:nth-child(3){display:none}}

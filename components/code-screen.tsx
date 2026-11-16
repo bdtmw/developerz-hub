@@ -1,26 +1,33 @@
 // Decorative, continuously scrolling code panel used behind the home hero.
-const code = `import { brief, team, release, handover } from '@developerz/hub'; // imagine. create. develop.
-import { web, mobile, cloud, ai } from '@developerz/stacks';        // design - development - possibility
-export async function buildWhatComesNext(idea, { audience = 'yours', budget, deadline } = {}) {
-  const scope = await brief.shape(idea, { audience, budget, deadline, mustHave: idea.features });
-  const developers = await team.match(scope.stack, { seniority: 'vetted', timezone: scope.overlap });
-  for (const milestone of scope.milestones) {                        // one reviewable step at a time
-    const build = await developers.build(milestone, { tests: true, accessibility: true, docs: 2 });
-    const feedback = await build.review({ with: 'you', on: 'staging', notes: milestone.acceptance });
-    if (feedback.approved) await release.ship(build, { rollback: 'ready', monitor: 'first 48 hours' });
-    else await developers.revise(build, feedback.changes, { within: scope.revisionRounds });
+const code = `import { brief, team } from '@developerz/hub';
+
+// imagine. create. develop.
+export async function buildWhatComesNext(idea) {
+  const scope = await brief.shape(idea, { audience: 'yours' });
+  const developers = await team.match(scope.stack);
+
+  for (const milestone of scope.milestones) {
+    const release = await developers.build(milestone);
+    await release.review({ with: 'you' });
+    if (release.approved) await release.ship();
   }
-  return handover.transfer({ code: 'yours', docs: 'complete', ownership: 'client', support: 30 });
+
+  return { ideas: 'possibilities', craft: 'human' };
 }
-const stacks = [web.next, web.wordpress, mobile.reactNative, cloud.apis, ai.applications, web.shopify];
-const project = await buildWhatComesNext('your next digital product', { audience: 'your customers' });
-export const result = { ideas: 'possibilities', craft: 'human', vision: 'yours', delivery: project };
-function estimate(scope) { return scope.milestones.reduce((total, step) => total + step.effort, 0); }
-const plan = { discover: 'define the problem worth solving', build: 'working software you can review' };
-export default async function start() { return brief.open({ plan, stacks, estimate, next: 'your move' }); }
+
+const stacks = ['web', 'mobile', 'cloud', 'ai'];
+const project = await buildWhatComesNext('your next product');
+
+// design - development - possibility
+function handover(project) {
+  const docs = project.document({ depth: 2 });
+  return project.transfer({ docs, ownership: 'client' });
+}
+
+export const next = handover(project);
 `;
 
-const token = /(\/\/.*$)|('[^']*')|\b(import|from|export|default|async|await|function|const|for|of|if|else|return|true)\b|\b(\d+)\b|\b([A-Za-z_]+)(?=\()/gm;
+const token = /(\/\/.*$)|('[^']*')|\b(import|from|export|async|await|function|const|for|of|if|return)\b|\b(\d+)\b|\b([A-Za-z_]+)(?=\()/gm;
 
 function highlight(line: string, key: number) {
   const parts: React.ReactNode[] = [];
@@ -35,11 +42,19 @@ function highlight(line: string, key: number) {
   return <div key={key} className="code-line">{parts.length > 1 || parts[0] ? parts : ' '}</div>;
 }
 
+// Each column starts at a different line and scrolls at its own pace.
+const columns = [{ offset: 0, seconds: 34 }, { offset: 9, seconds: 44 }, { offset: 17, seconds: 30 }, { offset: 5, seconds: 40 }];
+
 export function CodeScreen() {
   const lines = code.split('\n');
   return <div className="code-screen" aria-hidden="true">
-    <div className="code-scroll">
-      {[0, 1, 2, 3].map(copy => <div key={copy}>{lines.map((line, i) => highlight(line, i))}</div>)}
-    </div>
+    {columns.map((col, c) => {
+      const rotated = [...lines.slice(col.offset), ...lines.slice(0, col.offset)];
+      return <div key={c} className="code-col">
+        <div className="code-scroll" style={{ animationDuration: `${col.seconds}s` }}>
+          {[0, 1, 2, 3].map(copy => <div key={copy}>{rotated.map((line, i) => highlight(line, i))}</div>)}
+        </div>
+      </div>;
+    })}
   </div>;
 }
