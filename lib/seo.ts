@@ -21,6 +21,7 @@ export const pages: Record<string, {title: string; description: string}> = {
   '/guides/web-developer-cost/': { title: 'Web Developer Costs: How to Budget Your Project', description: 'Learn what affects web developer costs, compare fixed and hourly pricing, use a sample budget calculation and prepare a brief for a project-specific quote.' },
   '/guides/hire-developer-startup/': { title: 'How to Hire a Developer for Your Startup', description: 'Learn how to scope your first release, evaluate developers, compare engagement models and prepare a practical hiring brief for your startup.' },
   '/about/': { title: 'About Us & Our Development Approach', description: 'Learn how Developerz Hub approaches web, mobile and software projects, from defining requirements to reviewing deliverables and planning the handover.' },
+  '/ai-receptionist/': { title: 'AI Receptionist for Small Business', description: 'Plan an AI receptionist for your small business with Developerz Hub. Explore call handling, enquiry capture, booking workflows and custom integrations.' },
   '/contact/': { title: 'Contact Us | Discuss Your Project', description: 'Contact Developerz Hub at info@developerzhub.com for web, mobile or software development. Prepare a brief with your goals, stack and timeline.' },
   '/privacy/': { title: 'Privacy Information', description: 'How the Developerz Hub website handles project briefs, email enquiries, fonts and basic site delivery information.' },
 } as const;

@@ -9,6 +9,7 @@ const cards = [
   { href: '/hire-mobile-app-developers/', title: 'Mobile app development', photo: 'mobile' },
   { href: '/hire-shopify-developers/', title: 'Shopify development', photo: 'shopify' },
   { href: '/hire-cloud-developers/', title: 'Cloud & APIs', photo: 'cloud' },
+  { href: '/ai-receptionist/', title: 'AI Receptionist', photo: 'ai' },
   { href: '/hire-chatbot-developers/', title: 'Chatbot & AI applications', photo: 'ai' },
   { href: '/hire-ecommerce-developers/', title: 'Ecommerce development', photo: 'ecommerce' },
 ];
