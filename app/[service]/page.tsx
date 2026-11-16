@@ -5,6 +5,7 @@ import {pageMetadata} from '@/lib/seo';
 import {Breadcrumbs,ServiceSchema,JsonLd} from '@/components/seo';
 import HiringBrief from '@/components/hiring-brief';
 import { ReactTeamHero } from '@/components/react-team-hero';
+import ReactEstimator from '@/components/react-estimator';
 export const dynamicParams=false;
 export function generateStaticParams(){return hiringCopies.map(p=>({service:p.slug}));}
 export async function generateMetadata({params}:{params:Promise<{service:string}>}){const {service}=await params;if(!hiringCopies.some(p=>p.slug===service))notFound();return pageMetadata(`/${service}/`);}
@@ -23,6 +24,7 @@ export default async function Page({params}:{params:Promise<{service:string}>}){
   {p.sections.filter(section => service !== 'hire-react-developers' || section.id !== 'pricing').map(section=><section className={`section hiring-section hiring-${section.id}`} id={section.id} key={section.id}>
    <h2>{section.heading}</h2><p className="section-answer">{section.answer}</p>
    <div className="hiring-blocks">{section.blocks.map((block,index)=><div className="hiring-block" key={block.heading??index}>{block.heading&&<h3>{block.heading}</h3>}{block.paragraphs?.map((text,i)=><p key={i}>{text}</p>)}{block.items&&<ul>{block.items.map(item=><li key={item}>{item}</li>)}</ul>}</div>)}</div>
+   {service === 'hire-react-developers' && section.id === 'answer' && <ReactEstimator/>}
    {section.table&&<div className="table-scroll" tabIndex={0} role="region" aria-label="Hiring arrangement comparison"><table><caption>Compare the proposed hiring arrangements</caption><thead><tr>{section.table.headers.map(h=><th scope="col" key={h}>{h}</th>)}</tr></thead><tbody>{section.table.rows.map(row=><tr key={row[0]}>{row.map((cell,i)=>i===0?<th scope="row" key={i}>{cell}</th>:<td key={i}>{cell}</td>)}</tr>)}</tbody></table></div>}
    {section.id==='fit'&&<nav aria-label="Alternative developer roles" className="hiring-related">{p.related.map(link=><Link href={link.path} key={link.path}>{link.label} ↗</Link>)}</nav>}
   </section>)}

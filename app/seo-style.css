@@ -21,3 +21,29 @@
 .react-plan-grid h3{margin-top:0}.react-plan-grid .react-plan-price{font-family:'Space Grotesk',sans-serif;font-size:56px;line-height:1.2;color:#f9e7f3;margin:12px 0}
 .react-plan-price span{font-family:'DM Sans',sans-serif;font-size:16px;color:var(--muted);margin-left:6px}.react-plan-grid ul{margin-bottom:28px}.react-plan-grid .button{margin-top:auto}
 @media(max-width:760px){.react-team-hero{padding-top:48px;padding-bottom:40px}.react-team-hero .intro-description{font-size:17px}.react-plan-grid{grid-template-columns:1fr}.react-team-benefits{flex-direction:column;gap:12px}.react-plan-grid article{padding:24px}}
+/* React project budget estimator */
+.react-estimator{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);margin-top:36px;border:1px solid #f263b030;border-radius:20px;overflow:hidden;background:#191020}
+.estimate-inputs,.estimate-summary{padding:32px;min-width:0}
+.react-estimator .eyebrow{font-size:10px;letter-spacing:2px;color:#efa3ce;margin:0 0 12px}
+.react-estimator h3{font-size:26px;margin:0 0 26px;line-height:1.25}
+.estimate-plans{border:0;padding:0;margin:0 0 24px;min-width:0}
+.estimate-plans legend,.estimate-hours{font-size:13px;font-weight:600;color:#eee5f2;margin-bottom:12px;display:block}
+.estimate-plans label{display:flex;align-items:flex-start;gap:12px;border:1px solid #ffffff18;border-radius:12px;padding:16px;margin-bottom:10px;cursor:pointer;transition:border-color .2s,background .2s}
+.estimate-plans label.is-selected{border-color:#f263b0;background:#f263b00b}
+.estimate-plans input{accent-color:#f263b0;flex-shrink:0;margin-top:5px}
+.estimate-plans span{flex:1;min-width:0}.estimate-plans strong{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px;font-size:15px}.estimate-plans b{color:#f5a9d4;font-weight:500}
+.estimate-plans small{display:block;color:var(--muted);font-size:12px;line-height:1.6;margin-top:6px}
+.estimate-inputs>input{display:block;width:100%;border:1px solid #ffffff25;border-radius:10px;background:#100b17;color:#fff;padding:12px 16px;font-size:20px}
+.estimate-inputs>input[aria-invalid=true]{border-color:#ffb181}
+.react-estimator .estimate-help{font-size:12px;line-height:1.6;margin:8px 0 14px;color:var(--muted)}
+.estimate-presets{display:flex;flex-wrap:wrap;gap:8px}.estimate-presets button{padding:7px 14px;background:transparent;color:#d9cde1;border:1px solid #ffffff20;border-radius:8px;cursor:pointer;font-size:12px}
+.estimate-presets button[aria-pressed=true],.estimate-presets button:hover{border-color:#f263b0;color:#ffb9e0;background:#f263b012}
+.estimate-summary{display:flex;flex-direction:column;background:radial-gradient(ellipse at 100% 0,#f263b018,transparent 70%),#211329;border-left:1px solid #ffffff12}
+.react-estimator .estimate-total{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,4vw,54px);line-height:1.15;color:#fff;margin:18px 0 8px;overflow-wrap:anywhere;letter-spacing:-2px}
+.estimate-total span{display:inline-block;margin-left:10px;color:#bda5c8;font-size:12px;letter-spacing:1px}
+.react-estimator .estimate-included{font-size:12px;color:#f5afd5;margin:12px 0 18px}.estimate-included::before{content:'✓';margin-right:8px}
+.estimate-comparison{margin:0;padding:18px 0;border-block:1px solid #ffffff18;font-size:12px}.estimate-comparison>div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;padding:5px 0}.estimate-comparison dt{color:var(--muted)}.estimate-comparison dd{margin:0;color:#f9e8f3;font-weight:600}
+.react-estimator .estimate-note{font-size:12px;line-height:1.7;margin:20px 0;color:#bca8c6}
+.estimate-summary .button{margin-top:auto;justify-content:center;text-align:center}.estimate-email-note{display:block;font-size:11px;line-height:1.5;color:#bca8c6;text-align:center;margin-top:10px}
+.react-estimator :is(input,button,a):focus-visible{outline:2px solid #ffa7d7;outline-offset:4px}
+@media(max-width:760px){.react-estimator{grid-template-columns:1fr;border-radius:16px}.estimate-inputs,.estimate-summary{padding:24px}.estimate-summary{border-left:0;border-top:1px solid #ffffff12}.react-estimator h3{font-size:23px}}
