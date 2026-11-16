@@ -1,0 +1,5 @@
+import BriefForm from '@/components/brief-form';
+import {Breadcrumbs} from '@/components/seo';
+import {pageMetadata} from '@/lib/seo';
+export const metadata=pageMetadata('/contact/');
+export default function Page(){return <main id="main" className="section brief-layout"><div><Breadcrumbs items={[{name:'Contact',path:'/contact/'}]}/><p className="eyebrow">IT STARTS WITH AN IDEA</p><h1>Contact<br/><em>Developerz Hub.</em></h1><p className="intro-description">Tell us about your website, mobile app, software platform or specialist development project. Share your goals, must-have features and timing so the next conversation starts with a clear brief.</p><a className="contact-email" href="mailto:info@developerzhub.com">info@developerzhub.com ↗</a><div className="process"><div><span>01</span><h2>Tell your story</h2><p>Describe the problem, the audience and the result you want.</p></div><div><span>02</span><h2>Make it concrete</h2><p>Choose a service and outline the timing, scope and constraints.</p></div><div><span>03</span><h2>Review and send</h2><p>Prepare a brief, then open it in your email app or download a copy.</p></div></div></div><BriefForm/></main>}

@@ -1,0 +1,7 @@
+import Link from 'next/link';
+import { absoluteUrl, organization, site } from '@/lib/seo';
+export function JsonLd({ data }: { data: Record<string, unknown> }) { return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(data).replace(/</g, '\\u003c') }}/>; }
+export function SiteSchema() { return <JsonLd data={{ '@context': 'https://schema.org', '@graph': [organization, { '@type': 'WebSite', '@id': `${site.url}/#website`, url: site.url, name: site.name, publisher: { '@id': organization['@id'] }, inLanguage: 'en' }] }}/>; }
+export type Crumb = { name: string; path: string };
+export function Breadcrumbs({ items }: { items: Crumb[] }) { const crumbs = [{ name: 'Home', path: '/' }, ...items]; return <><nav aria-label="Breadcrumb" className="seo-breadcrumb"><ol>{crumbs.map((item, index) => <li key={item.path}>{index === crumbs.length - 1 ? <span aria-current="page">{item.name}</span> : <Link href={item.path}>{item.name}</Link>}</li>)}</ol></nav><JsonLd data={{ '@context': 'https://schema.org', '@type': 'BreadcrumbList', itemListElement: crumbs.map((item,index) => ({ '@type':'ListItem', position:index+1, name:item.name, item:absoluteUrl(item.path) })) }}/></>; }
+export function ServiceSchema({name,description,path}:{name:string;description:string;path:string}) { return <JsonLd data={{'@context':'https://schema.org','@type':'Service',name,description,url:absoluteUrl(path),serviceType:name,provider:{'@id':organization['@id']}}}/>; }
