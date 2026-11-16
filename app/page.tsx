@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { ServiceLinks } from '@/components/site';
 import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata('/');
+const certifications = ['Shopify Partner', 'Meta Certified Developer', 'HubSpot Certified'];
 const specialties = ['Web development', 'WordPress', 'Full-stack', 'Mobile apps', 'Cloud & APIs', 'AI applications'];
 export default function Home() {
   return <main id="main" className="template-home">
@@ -18,6 +19,12 @@ export default function Home() {
         <figure className="hero-artwork"><img src="/digital-future.webp" srcSet="/digital-future-480.webp 480w, /digital-future-800.webp 800w, /digital-future.webp 1536w" sizes="(max-width: 760px) 90vw, 50vw" decoding="async" alt="Futuristic chrome figure beside a glowing pink portal" width="1536" height="1024" fetchPriority="high"/><figcaption><span>IMAGINATION, ENGINEERED.</span><span>01 / DEVELOPERZ HUB</span></figcaption></figure>
       </div>
       <div className="hero-side-label" aria-hidden="true">DESIGN — DEVELOPMENT — POSSIBILITY</div>
+    </section>
+    <section className="cert-marquee" aria-label="Developer certifications">
+      <p className="cert-sr">Our developers are certified: {certifications.join(', ')}.</p>
+      <div className="cert-track" aria-hidden="true">
+        {[0, 1].map(group => <ul key={group}>{Array.from({ length: 4 }, () => certifications).flat().map((name, i) => <li key={i}><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2.5l2.4 1.9 3-.3 1 2.9 2.6 1.6-.9 2.9.9 2.9-2.6 1.6-1 2.9-3-.3-2.4 1.9-2.4-1.9-3 .3-1-2.9L3 14.4l.9-2.9L3 8.6l2.6-1.6 1-2.9 3 .3z"/><path d="M8.5 11.8l2.4 2.4 4.6-4.9"/></svg><span>{name}</span></li>)}</ul>)}
+      </div>
     </section>
     <section id="creative-approach" className="creative-split section">
       <div className="image-collage"><img className="collage-tall" src="/new-perspectives.webp" srcSet="/new-perspectives-480.webp 480w, /new-perspectives-800.webp 800w, /new-perspectives.webp 1122w" sizes="(max-width: 760px) 90vw, 50vw" decoding="async" alt="An explorer beneath a luminous sculptural ribbon" width="1122" height="1402" loading="lazy"/><img className="collage-detail" src="/digital-future.webp" srcSet="/digital-future-480.webp 480w, /digital-future-800.webp 800w, /digital-future.webp 1536w" sizes="(max-width: 760px) 90vw, 50vw" decoding="async" alt="Magenta-lit futuristic architecture" width="1536" height="1024" loading="lazy"/><span className="collage-star" aria-hidden="true">✳</span></div>
