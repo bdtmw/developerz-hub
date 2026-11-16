@@ -39,3 +39,12 @@ html{scroll-padding-top:110px}.button{background:#d91b76}.button:hover{backgroun
 @keyframes cert-scroll{to{transform:translateX(-50%)}}
 @media(max-width:760px){.cert-marquee{padding:16px 0}.cert-track{animation-duration:48s}.cert-track li{padding:0 28px;font-size:18px;gap:9px}.cert-track svg{width:24px;height:24px}}
 @media(prefers-reduced-motion:reduce){.cert-track{animation:none}}
+
+/* Hero: three-step "how it starts" list between the CTA and the scroll hint */
+.hero-steps{margin-bottom:38px}
+.hero-steps-title{display:block;font-size:9px;letter-spacing:2.4px;color:#8a749a;margin-bottom:14px}
+.hero-steps ol{list-style:none;margin:0;padding:0;border-left:1px solid var(--line)}
+.hero-steps li{position:relative;display:flex;align-items:baseline;gap:14px;padding:7px 0 7px 18px;font-family:'Space Grotesk','DM Sans',Arial,sans-serif;font-size:15px;color:#e4dbea}
+.hero-steps li::before{content:'';position:absolute;left:-3px;top:50%;width:5px;height:5px;margin-top:-2.5px;border-radius:50%;background:var(--accent)}
+.hero-steps li span{font-size:10px;letter-spacing:1.6px;color:var(--accent)}
+@media(max-width:760px){.hero-steps{margin-bottom:26px}.hero-steps li{font-size:14px}}
