@@ -11,16 +11,20 @@ const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: '
 export default function ReactEstimator() {
   const [selected, setSelected] = useState<keyof typeof plans>('junior');
   const [hours, setHours] = useState('40');
+  const [description, setDescription] = useState('');
   const parsed = Number(hours);
   const valid = hours.trim() !== '' && Number.isFinite(parsed) && parsed >= 1 && parsed <= 10000 && Number.isInteger(parsed);
   const plan = plans[selected];
   const total = valid ? parsed * plan.rate : null;
-  const enquiry = total === null ? '' : `Hello Developerz Hub,\n\nI would like to discuss a React project.\n\nTeam: ${plan.name}\nIncludes: ${plan.includes}\nExpected total hours: ${parsed}\nHourly rate: ${currency.format(plan.rate)} USD\nEstimated budget: ${currency.format(total)} USD\n\nProject requirements:\n\nPlease help me confirm the scope, hours and start date.`;
+  const enquiry = total === null ? '' : `Hello Developerz Hub,\n\nI would like to discuss a React project.\n\nTeam: ${plan.name}\nIncludes: ${plan.includes}\nExpected total hours: ${parsed}\nHourly rate: ${currency.format(plan.rate)} USD\nEstimated budget: ${currency.format(total)} USD\n\nProject requirements:\n${description.trim() || 'To be discussed.'}\n\nPlease help me confirm the scope, hours and start date.`;
 
   return <div className="react-estimator" aria-labelledby="estimate-title">
     <div className="estimate-inputs">
       <p className="eyebrow">PLAN YOUR BUDGET</p>
       <h3 id="estimate-title">What could your project cost?</h3>
+      <label className="estimate-description-label" htmlFor="estimate-description">Tell us about your project <span>(optional)</span></label>
+      <textarea id="estimate-description" name="project-description" rows={4} maxLength={2000} value={description} onChange={event => setDescription(event.target.value)} placeholder="What are you building? Share the features, existing app or integrations you have in mind." aria-describedby="estimate-description-help"/>
+      <p id="estimate-description-help" className="estimate-help">Included in your enquiry draft. Your description does not change the hourly calculation.</p>
       <fieldset className="estimate-plans"><legend>Choose your managed team</legend>
         {(Object.entries(plans) as [keyof typeof plans, typeof plan][]).map(([key, item]) => <label key={key} className={selected === key ? 'is-selected' : ''}>
           <input type="radio" name="estimate-plan" value={key} checked={selected === key} onChange={() => setSelected(key)}/>

@@ -47,3 +47,6 @@
 .estimate-summary .button{margin-top:auto;justify-content:center;text-align:center}.estimate-email-note{display:block;font-size:11px;line-height:1.5;color:#bca8c6;text-align:center;margin-top:10px}
 .react-estimator :is(input,button,a):focus-visible{outline:2px solid #ffa7d7;outline-offset:4px}
 @media(max-width:760px){.react-estimator{grid-template-columns:1fr;border-radius:16px}.estimate-inputs,.estimate-summary{padding:24px}.estimate-summary{border-left:0;border-top:1px solid #ffffff12}.react-estimator h3{font-size:23px}}
+
+.estimate-description-label{display:block;font-size:13px;font-weight:600;color:#eee5f2;margin-bottom:10px}.estimate-description-label span{font-weight:400;color:var(--muted)}
+.estimate-inputs>textarea{display:block;box-sizing:border-box;width:100%;min-height:120px;resize:vertical;border:1px solid #ffffff25;border-radius:10px;background:#100b17;color:#fff;padding:13px 16px;font:inherit;font-size:14px;line-height:1.65}.estimate-inputs>textarea::placeholder{color:#9986a4}.estimate-inputs>textarea:focus-visible{outline:2px solid #ffa7d7;outline-offset:4px}
