@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ServiceLinks } from '@/components/site';
+import { CodeScreen } from '@/components/code-screen';
 import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata('/');
 // Brand marks from Simple Icons (simpleicons.org, CC0).
@@ -17,7 +18,7 @@ const specialties = ['Web development', 'WordPress', 'Full-stack', 'Mobile apps'
 export default function Home() {
   return <main id="main" className="template-home">
     <section className="editorial-hero">
-      <div className="code-texture" aria-hidden="true">{Array.from({ length: 18 }, (_, i) => <span key={i}>imagine. create. develop. {'{'} ideas: possibilities, craft: human {'}'} — build what comes next</span>)}</div>
+      <CodeScreen/>
       <div className="editorial-headline">
         <p className="eyebrow">WEB &amp; SOFTWARE DEVELOPMENT SERVICES</p>
         <h1>Web development.<br/><em>Extraordinary possibilities.</em></h1>
