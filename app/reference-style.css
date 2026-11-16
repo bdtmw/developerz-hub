@@ -60,3 +60,35 @@ html{scroll-padding-top:110px}.button{background:#d91b76}.button:hover{backgroun
 @media(prefers-reduced-motion:reduce){.code-scroll{animation:none}}
 @media(max-width:1100px){.code-col:nth-child(4){display:none}}
 @media(max-width:760px){.code-screen{font-size:9px;gap:28px;opacity:.16}.code-col:nth-child(3){display:none}}
+
+/* Home "What we do": service cards */
+.editorial-expertise{position:relative;padding:70px 6% 110px}
+.editorial-expertise::before{content:'';position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 620px 360px at 50% 34%,#d6338a1c,transparent 75%)}
+.editorial-expertise>*{position:relative}
+.xp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;max-width:1240px;margin:0 auto}
+.xp-card{position:relative;display:flex;flex-direction:column;padding:30px 30px 28px;border:1px solid #f5b2dc24;border-radius:16px;background:linear-gradient(160deg,#ffffff0a,#ffffff03 55%);overflow:hidden;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.xp-card::before{content:'';position:absolute;left:0;right:0;top:0;height:2px;background:linear-gradient(90deg,#ff459d,#a882ee);transform:scaleX(0);transform-origin:left;transition:transform .35s ease}
+.xp-card::after{content:'';position:absolute;right:-90px;top:-90px;width:220px;height:220px;border-radius:50%;background:radial-gradient(circle,#f263b02e,transparent 70%);opacity:0;transition:opacity .3s ease;pointer-events:none}
+.xp-card:hover,.xp-card:focus-visible{transform:translateY(-6px);border-color:#f263b070;background:linear-gradient(160deg,#ffffff10,#ffffff05 55%)}
+.xp-card:hover::before,.xp-card:focus-visible::before{transform:scaleX(1)}
+.xp-card:hover::after,.xp-card:focus-visible::after{opacity:1}
+.xp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:26px}
+.xp-icon{display:grid;place-items:center;width:54px;height:54px;border-radius:13px;color:#ff7fc0;background:linear-gradient(140deg,#f263b026,#a882ee1a);border:1px solid #f263b03d}
+.xp-number{font-family:'Space Grotesk','DM Sans',Arial,sans-serif;font-size:13px;letter-spacing:2px;color:#8a749a}
+.xp-card h3{font-size:25px;font-weight:600;line-height:1.2;margin:0 0 12px}
+.xp-card>p{font-size:15px;line-height:1.7;color:var(--muted);margin:0 0 20px}
+.xp-card ul{list-style:none;margin:0 0 24px;padding:20px 0 0;border-top:1px solid #f5b2dc1a;display:grid;gap:11px}
+.xp-card li{position:relative;padding-left:24px;font-size:14px;line-height:1.5;color:#d9cfe0}
+.xp-card li::before{content:'';position:absolute;left:2px;top:.42em;width:9px;height:5px;border-left:1.6px solid #f263b0;border-bottom:1.6px solid #f263b0;transform:rotate(-45deg)}
+.xp-tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:26px}
+.xp-tags span{font-size:10px;letter-spacing:1.3px;color:#c9b8d4;padding:6px 10px;border-radius:999px;background:#ffffff0a;border:1px solid #ffffff12}
+.xp-more{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:18px;border-top:1px solid #f5b2dc1a;font-size:14px;font-weight:600;color:#f5f3fb}
+.xp-more span{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:1px solid #f263b05c;color:#ff7fc0;transition:background .25s ease,color .25s ease,transform .25s ease}
+.xp-card:hover .xp-more span,.xp-card:focus-visible .xp-more span{background:#e01f7c;border-color:#e01f7c;color:#fff;transform:rotate(45deg)}
+.xp-all{text-align:center;margin:44px 0 0}
+.xp-all a{display:inline-flex;align-items:center;gap:10px;font-size:14px;color:#e4dbea;padding:13px 22px;border:1px solid #dd80b84d;border-radius:999px;transition:border-color .2s,color .2s}
+.xp-all a:hover{border-color:#f263b0;color:#fff}
+@media(max-width:1100px){.xp-grid{gap:16px}.xp-card{padding:24px 22px}.xp-card h3{font-size:22px}}
+@media(max-width:900px){.xp-grid{grid-template-columns:1fr;max-width:560px}}
+@media(max-width:760px){.editorial-expertise{padding:55px 6% 70px}.xp-all{margin-top:30px}}
+@media(prefers-reduced-motion:reduce){.xp-card,.xp-card::before,.xp-more span{transition:none}.xp-card:hover{transform:none}}
