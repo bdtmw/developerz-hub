@@ -28,9 +28,11 @@ html{scroll-padding-top:110px}.button{background:#d91b76}.button:hover{backgroun
 .cert-track{display:flex;width:max-content;animation:cert-scroll 48s linear infinite}
 .cert-marquee:hover .cert-track{animation-play-state:paused}
 .cert-track ul{display:flex;flex-shrink:0;align-items:center;margin:0;padding:0;list-style:none}
-.cert-track li{display:flex;align-items:center;gap:12px;padding:0 46px;white-space:nowrap;font-family:'Space Grotesk','DM Sans',Arial,sans-serif;font-size:23px;font-weight:700;letter-spacing:-.3px;color:#e9e1ee;opacity:.72;transition:opacity .2s}
-.cert-track li:hover{opacity:1}
-.cert-track svg{flex-shrink:0}
+.cert-track li{display:flex;align-items:center;gap:10px;padding:0 50px;white-space:nowrap;font-family:'Space Grotesk','DM Sans',Arial,sans-serif;font-size:25px;line-height:1;letter-spacing:-.4px;color:#f5f3fb}
+.cert-track svg{flex-shrink:0;margin-right:2px}
+.cert-track b{font-weight:700}
+.cert-track i{font-style:normal;font-weight:300;color:#d9cfe0}
+.cert-track .cert-shopify b,.cert-track .cert-shopify i{font-style:italic}
 .cert-sr{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 @keyframes cert-scroll{to{transform:translateX(-50%)}}
 @media(max-width:760px){.cert-marquee{padding:16px 0}.cert-track{animation-duration:36s}.cert-track li{padding:0 28px;font-size:18px;gap:9px}.cert-track svg{width:24px;height:24px}}
