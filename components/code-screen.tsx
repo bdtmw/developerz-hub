@@ -42,11 +42,19 @@ function highlight(line: string, key: number) {
   return <div key={key} className="code-line">{parts.length > 1 || parts[0] ? parts : ' '}</div>;
 }
 
+// Each column starts at a different line and scrolls at its own pace.
+const columns = [{ offset: 0, seconds: 34 }, { offset: 9, seconds: 44 }, { offset: 17, seconds: 30 }, { offset: 5, seconds: 40 }];
+
 export function CodeScreen() {
   const lines = code.split('\n');
   return <div className="code-screen" aria-hidden="true">
-    <div className="code-scroll">
-      {[0, 1].map(copy => <div key={copy}>{lines.map((line, i) => highlight(line, i))}</div>)}
-    </div>
+    {columns.map((col, c) => {
+      const rotated = [...lines.slice(col.offset), ...lines.slice(0, col.offset)];
+      return <div key={c} className="code-col">
+        <div className="code-scroll" style={{ animationDuration: `${col.seconds}s` }}>
+          {[0, 1, 2, 3].map(copy => <div key={copy}>{rotated.map((line, i) => highlight(line, i))}</div>)}
+        </div>
+      </div>;
+    })}
   </div>;
 }
