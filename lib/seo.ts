@@ -39,4 +39,4 @@ export function pageMetadata(path: PagePath): Metadata {
     twitter: { card: 'summary_large_image', title, description: hiring?.description ?? page.description, images: [image.url] },
   };
 }
-export const organization = { '@type': 'Organization', '@id': `${site.url}/#organization`, name: site.name, url: site.url, email: site.email, logo: { '@type': 'ImageObject', url: absoluteUrl('/developerz-hub-logo.png'), width: 200, height: 46 } };
+export const organization = { '@type': 'Organization', '@id': `${site.url}/#organization`, name: site.name, url: site.url, email: site.email, logo: { '@type': 'ImageObject', url: absoluteUrl('/developerz-hub-logo.png'), width: 344, height: 66 } };
