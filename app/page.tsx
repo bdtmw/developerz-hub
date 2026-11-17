@@ -36,7 +36,7 @@ export default function Home() {
     <section className="cert-marquee" aria-label="Developer certifications">
       <p className="cert-sr">Our developers are certified: {certifications.map(c => c.label).join(', ')}.</p>
       <div className="cert-track" aria-hidden="true">
-        {[0, 1].map(group => <ul key={group}>{Array.from({ length: 2 }, () => certifications).flat().map((c, i) => <li key={i} className={`cert-${c.name.toLowerCase()}`}>{c.img ? <img src={c.img} alt={c.label} width="52" height="52" className="cert-badge-img"/> : <><svg viewBox="0 0 24 24" width="32" height="32" fill={c.color}><path d={c.mark}/></svg>{!c.wordmark && <b>{c.name}</b>}</>}<i>{c.role}</i></li>)}</ul>)}
+        {[0, 1].map(group => <ul key={group}>{Array.from({ length: 2 }, () => certifications).flat().map((c, i) => <li key={i} className={`cert-${c.name.toLowerCase()}`}>{c.img ? <img src={c.img} alt={c.label} className="cert-badge-img"/> : <><svg viewBox="0 0 24 24" width="32" height="32" fill={c.color}><path d={c.mark}/></svg>{!c.wordmark && <b>{c.name}</b>}<i>{c.role}</i></>}</li>)}</ul>)}
       </div>
     </section>
     <section id="creative-approach" className="creative-split section">
