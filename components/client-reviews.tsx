@@ -40,7 +40,7 @@ export default function ClientReviews() {
         </div>
         <p>From websites to custom applications, clients share what mattered most: clear communication, thoughtful delivery and support along the way.</p>
       </div>
-      <ServiceSlider stepPx={440} label="reviews">
+      <ServiceSlider stepPx={382} label="reviews">
         {reviews.map(review => <ReviewCard key={review.name} review={review} />)}
       </ServiceSlider>
       <div className="client-reviews-bottom">
