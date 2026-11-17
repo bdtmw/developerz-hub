@@ -31,9 +31,8 @@ const stats = [
 export default function Page() {
   return (
     <main id="main" className="template-about">
-      <Breadcrumbs items={[{ name: 'About', path: '/about/' }]} />
-
       <section className="about-hero">
+        <Breadcrumbs items={[{ name: 'About', path: '/about/' }]} />
         <p className="eyebrow"><span className="status-dot" aria-hidden="true" />DEVELOPERZ HUB</p>
         <h1>A clear approach<br />to <em>digital development.</em></h1>
         <p className="about-intro">Developerz Hub works across web, mobile, backend, ecommerce and specialist development stacks. Our starting point is the problem you want to solve and the experience you want to create.</p>
