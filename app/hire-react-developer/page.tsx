@@ -39,6 +39,13 @@ const REVIEWS = [
   { name: 'Derick', country: 'United States', project: 'WordPress development', quote: 'Clean code, fast performance, responsive design, and great communication from start to finish. He understood our requirements immediately, offered smart suggestions, and delivered exactly what we needed—on time and without shortcuts.' },
   { name: 'Zachary', country: 'Canada', project: 'Corporate website development', quote: 'He quickly understood our needs and delivered high-quality work that exceeded expectations. Communication was clear throughout the process, and he handled revisions promptly and professionally.' },
   { name: 'Leonor', country: 'United States', project: 'Booking website development', quote: 'They were very attentive to detail and made sure to deliver everything exactly as I asked for. Communication was smooth and timely throughout the entire project.' },
+  { name: 'Marcus', country: 'Australia', project: 'React stock photography marketplace', quote: 'Developer understood what I was looking for and got it right from the very start.' },
+  { name: 'Sophie', country: 'United Kingdom', project: 'Next.js animation project', quote: 'Thank you.' },
+  { name: 'James', country: 'United States', project: 'HVAC admin dashboard', quote: 'Responsive communication throughout and delivered exactly what we needed. Would absolutely hire again.' },
+  { name: 'Priya', country: 'Canada', project: 'Quoting and payment setup', quote: 'Fast responses and got the payment processing and transfers set up quickly and correctly.' },
+  { name: 'Tom', country: 'United Kingdom', project: 'Calculator updates', quote: 'Great quality work, clear communication, and completed ahead of schedule. Really pleased with the result.' },
+  { name: 'Rachel', country: 'Australia', project: 'Website updates', quote: 'Consistently high quality across several projects. Reliable, thorough, and easy to work with.' },
+  { name: 'Daniel', country: 'United States', project: 'Admin panel feature update', quote: 'Excellent work on the feature update. Delivered cleanly and on time — highly recommended.' },
 ];
 
 const FAQS = [
