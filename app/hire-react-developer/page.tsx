@@ -198,6 +198,90 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ── Case studies ── */}
+      <section className="lp-cases-section">
+        <div className="lp-section-header">
+          <p className="eyebrow">REACT PROJECTS WE'VE BUILT</p>
+          <h2>Real work.<br/><em>Real React.</em></h2>
+          <p className="lp-section-sub">Anonymous case studies from live projects — different kinds of React and Next.js work, end to end.</p>
+        </div>
+        <div className="lp-cases-grid">
+          <article className="lp-case-card">
+            <div className="lp-case-preview lp-case-preview-marketplace">
+              <div className="lp-case-screen">
+                <div className="lp-case-row"><span className="lp-case-pill lp-case-pill-img"/><span className="lp-case-pill lp-case-pill-img"/><span className="lp-case-pill lp-case-pill-img"/></div>
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-txt"/><span className="lp-case-pill lp-case-pill-price"/></div>
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-long"/></div>
+                <div className="lp-case-stripe-btn">Pay &amp; download</div>
+              </div>
+            </div>
+            <div className="lp-case-body">
+              <p className="lp-case-type">Marketplace</p>
+              <h3>Stock photography marketplace</h3>
+              <p>Photographers manage galleries, upload images, and set prices. Buyers browse watermarked previews, pay through Stripe, and download at their chosen resolution.</p>
+              <ul className="lp-case-stack"><li>React</li><li>TanStack Start</li><li>Stripe</li></ul>
+            </div>
+          </article>
+
+          <article className="lp-case-card">
+            <div className="lp-case-preview lp-case-preview-quote">
+              <div className="lp-case-screen">
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-long"/><span className="lp-case-pill lp-case-pill-short"/></div>
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-long"/><span className="lp-case-pill lp-case-pill-short"/></div>
+                <div className="lp-case-divider"/>
+                <div className="lp-case-total"><span className="lp-case-total-label">Total</span><span className="lp-case-total-val">£ 4,820.00</span></div>
+                <div className="lp-case-stripe-btn lp-case-btn-alt">Print estimate</div>
+              </div>
+            </div>
+            <div className="lp-case-body">
+              <p className="lp-case-type">Internal tool</p>
+              <h3>Custom quoting and order management</h3>
+              <p>Staff enter product dimensions and options; the tool calculates margins and generates a printable estimate. One workflow from configuration to quote.</p>
+              <ul className="lp-case-stack"><li>React</li><li>TypeScript</li></ul>
+            </div>
+          </article>
+
+          <article className="lp-case-card">
+            <div className="lp-case-preview lp-case-preview-eng">
+              <div className="lp-case-screen">
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-long"/></div>
+                <div className="lp-case-calc">
+                  <div className="lp-case-calc-row"><span className="lp-case-calc-label">Annual savings</span><span className="lp-case-calc-val lp-case-val-green">£12,400</span></div>
+                  <div className="lp-case-calc-row"><span className="lp-case-calc-label">Payback period</span><span className="lp-case-calc-val">2.1 yrs</span></div>
+                  <div className="lp-case-calc-row"><span className="lp-case-calc-label">Operating cost</span><span className="lp-case-calc-val">£ 3,200</span></div>
+                </div>
+              </div>
+            </div>
+            <div className="lp-case-body">
+              <p className="lp-case-type">Platform + CMS</p>
+              <h3>Engineering platform and CMS</h3>
+              <p>Technical documentation, project submissions, and an energy analysis calculator in one Next.js application. The calculator outputs savings, operating costs, and payback period.</p>
+              <ul className="lp-case-stack"><li>Next.js</li><li>TypeScript</li><li>Supabase</li></ul>
+            </div>
+          </article>
+
+          <article className="lp-case-card">
+            <div className="lp-case-preview lp-case-preview-portal">
+              <div className="lp-case-screen">
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-txt"/><span className="lp-case-pill lp-case-pill-status lp-case-status-green">In review</span></div>
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-txt"/><span className="lp-case-pill lp-case-pill-status lp-case-status-amber">Pending</span></div>
+                <div className="lp-case-row lp-case-row-sm"><span className="lp-case-pill lp-case-pill-txt"/><span className="lp-case-pill lp-case-pill-status lp-case-status-muted">Draft</span></div>
+                <div className="lp-case-stripe-btn lp-case-btn-alt">Approve scope</div>
+              </div>
+            </div>
+            <div className="lp-case-body">
+              <p className="lp-case-type">Client portal</p>
+              <h3>Agency project management and client portal</h3>
+              <p>Clients and the delivery team approve scope, submit change requests, and track time in the same Next.js portal. All project decisions in one place.</p>
+              <ul className="lp-case-stack"><li>Next.js</li><li>Supabase</li><li>Resend</li></ul>
+            </div>
+          </article>
+        </div>
+        <div className="lp-cases-cta">
+          <a href="#lp-form" className="button">Discuss your React project →</a>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="lp-faq-section">
         <div className="lp-faq-inner">
