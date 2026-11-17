@@ -2,7 +2,7 @@
 .template-lp{background:var(--bg)}
 
 /* Ticker */
-.lp-ticker{background:linear-gradient(90deg,#7c3aed,#a855f7 45%,#ec4899);overflow:hidden;padding:11px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.lp-ticker{background:#ed53a6;overflow:hidden;padding:11px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
 .lp-tick-track{display:flex;width:max-content;animation:lp-tick 50s linear infinite;gap:0}
 .lp-ticker:hover .lp-tick-track{animation-play-state:paused}
 .lp-tick-item{display:inline-flex;align-items:center;white-space:nowrap;font-size:12px;letter-spacing:.5px;color:#fff;font-weight:500;padding:0 42px}
