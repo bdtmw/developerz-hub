@@ -6,7 +6,7 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hire a React Developer | Developerz Hub — Response in 24 Hours',
+  title: { absolute: 'Hire a React Developer | Developerz Hub — Response in 24 Hours' },
   description: 'Hire expert React and Next.js developers. Tell us what you need — get a scoped brief and response within 24 hours. No lock-in.',
   robots: { index: false, follow: false },
 };
@@ -67,7 +67,7 @@ export default function Page() {
       {/* ── Hero ── */}
       <section className="lp-hero">
         <div className="lp-headline">
-          <p className="eyebrow lp-eyebrow">REACT &amp; NEXT.JS DEVELOPERS — RESPONSE IN 24 HOURS</p>
+          <p className="eyebrow lp-eyebrow">REACT &amp; NEXT.JS DEVELOPERS</p>
           <h1>Hire a React Developer.<br/><em>Project Brief to First Call<br/>in 24 Hours.</em></h1>
           <p className="lp-sub">React, Next.js, full-stack and frontend development. Tell us what you need — we scope it, staff it and start building.</p>
           <ul className="lp-trust">
@@ -185,7 +185,7 @@ export default function Page() {
                 <span className="lp-review-project">{r.project}</span>
                 <span className="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★ <b>5.0</b></span>
               </div>
-              <blockquote><p>"{r.quote}"</p></blockquote>
+              <blockquote><p>&#8220;{r.quote}&#8221;</p></blockquote>
               <figcaption>
                 <span className="lp-review-avatar" aria-hidden="true">{r.name[0]}</span>
                 <span><strong>{r.name}</strong><small>{r.country}</small></span>

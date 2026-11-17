@@ -133,8 +133,8 @@
   .lp-form-col{position:static}
   .lp-stats{grid-template-columns:repeat(2,1fr)}
   .lp-stat:nth-child(2){border-right:none}
-  .lp-stat:nth-child(3){border-top:1px solid var(--line);padding-left:5.5%}
-  .lp-stat:nth-child(4){border-top:1px solid var(--line);border-right:none}
+  .lp-stat:nth-child(3){border-top:1px solid var(--line);padding-left:5.5%;padding-right:5.5%}
+  .lp-stat:nth-child(4){border-top:1px solid var(--line);border-right:none;padding-right:5.5%}
   .lp-problems-grid{grid-template-columns:repeat(2,1fr)}
   .lp-process-grid{grid-template-columns:1fr}
   .lp-pricing-grid{grid-template-columns:1fr}
@@ -164,6 +164,7 @@
 body.lp-light-body{background:#f4eeff}
 
 /* ── Light theme ── */
+.lp-light .eyebrow,.lp-light .lp-eyebrow{color:#9b1f62}
 .template-lp.lp-light{--bg:#faf8ff;--panel:#ede6f9;--muted:#60497a;--accent:#c4186e;--line:#ddd5ef;background:#faf8ff;color:#1a0d2e}
 .lp-light .lp-hero{background:radial-gradient(ellipse at 10% 60%,#c4186e18,transparent 60%),radial-gradient(ellipse at 90% 20%,#8b1f6218,transparent 60%)}
 .lp-light .lp-headline h1{color:#1a0d2e}
