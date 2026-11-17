@@ -1,7 +1,6 @@
 import './lp.css';
 import { LeadForm } from './lead-form';
 import { BodyClass } from './body-class';
-import { ThemeToggle } from './theme-toggle';
 import { ExpertBar } from './expert-bar';
 import Link from 'next/link';
 import type { Metadata } from 'next';
@@ -54,7 +53,6 @@ export default function Page() {
   return (
     <main id="main" className="template-lp">
       <BodyClass className="has-lp-ticker" />
-      <ThemeToggle />
       <ExpertBar />
 
       {/* ── Ticker ── */}
