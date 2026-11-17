@@ -44,7 +44,7 @@ const REVIEWS = [
 
 const FAQS = [
   { q: 'How quickly can development start?', a: 'Typically within 1–2 weeks of your brief review and discovery call, once scope and budget are agreed.' },
-  { q: 'Fixed price or time-and-materials?', a: 'Both — we agree on the right model for your project. Defined builds usually suit fixed-price; ongoing products suit a retainer.' },
+  { q: 'How does pricing work?', a: 'Two models: $20/hr for focused fixes and production issues, or a fixed quote for complete projects. We agree upfront so there are no surprises.' },
   { q: 'Can you match our existing tech stack?', a: 'Yes. We work across 12+ stacks including React, Next.js, Node.js, Laravel, WordPress, Shopify, Flutter and more.' },
   { q: 'What if I already have a design?', a: 'Hand us your Figma or design files and we build from them. We also provide design as part of full-service engagements.' },
   { q: "What if I'm not happy with the work?", a: 'We iterate until it\'s right. The process includes staged milestone reviews before final delivery.' },
@@ -75,7 +75,7 @@ export default function Page() {
           <ul className="lp-trust">
             <li>1,000+ projects delivered globally</li>
             <li>Dedicated project manager on every job</li>
-            <li>Fixed-price or monthly retainer options</li>
+            <li>$20/hr fixes or fixed quote for complete projects</li>
             <li>No lock-in, cancel-friendly terms</li>
           </ul>
           <div className="lp-hero-ctas">
@@ -149,8 +149,21 @@ export default function Page() {
         </div>
         <div className="lp-pricing-grid">
           <div className="lp-price-card">
-            <p className="lp-price-label">Fixed project</p>
-            <p className="lp-price-desc">Scoped deliverables, milestone payments, defined timeline. Best for defined builds with clear requirements.</p>
+            <p className="lp-price-label">Hourly fixes</p>
+            <p className="lp-price-amount">$20 <span className="lp-price-unit">/ hour</span></p>
+            <p className="lp-price-desc">Pay for exactly what you need. Best for bug fixes, production issues, and focused improvements with a clear scope.</p>
+            <ul className="lp-price-features">
+              <li>No minimum commitment</li>
+              <li>Time tracked and reported</li>
+              <li>Same-day start available</li>
+              <li>React, Next.js, full-stack</li>
+            </ul>
+            <a href="#lp-form" className="button lp-form-btn">Brief a fix →</a>
+          </div>
+          <div className="lp-price-card lp-price-featured">
+            <p className="lp-price-badge">Complete projects</p>
+            <p className="lp-price-label">Fixed quote</p>
+            <p className="lp-price-desc">One price for the whole project — no surprises. Best for complete page builds, new apps, and defined deliverables.</p>
             <ul className="lp-price-features">
               <li>Agreed scope and deliverables</li>
               <li>Milestone-based payments</li>
@@ -158,18 +171,6 @@ export default function Page() {
               <li>Staged review and sign-off</li>
             </ul>
             <a href="#lp-form" className="button lp-form-btn">Get a fixed quote →</a>
-          </div>
-          <div className="lp-price-card lp-price-featured">
-            <p className="lp-price-badge">Most popular</p>
-            <p className="lp-price-label">Monthly retainer</p>
-            <p className="lp-price-desc">Ongoing development at a set monthly rate. Best for products, platforms and long-term technical partnerships.</p>
-            <ul className="lp-price-features">
-              <li>Flexible priorities each month</li>
-              <li>Weekly progress updates</li>
-              <li>Dedicated project manager</li>
-              <li>Cancel with 30 days' notice</li>
-            </ul>
-            <a href="#lp-form" className="button lp-form-btn">Start a retainer →</a>
           </div>
         </div>
       </section>

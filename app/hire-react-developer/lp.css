@@ -83,7 +83,9 @@
 .lp-price-card{background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:36px}
 .lp-price-featured{border-color:#ed53a640;background:#1f0d2e}
 .lp-price-badge{display:inline-block;background:#ed53a620;color:var(--accent);border:1px solid #ed53a640;border-radius:20px;font-size:11px;letter-spacing:1.2px;font-weight:600;padding:4px 12px;margin-bottom:14px}
-.lp-price-label{font-size:22px;font-weight:600;letter-spacing:-.03em;margin:0 0 12px}
+.lp-price-label{font-size:22px;font-weight:600;letter-spacing:-.03em;margin:0 0 8px}
+.lp-price-amount{font-size:38px;font-weight:700;letter-spacing:-.04em;color:var(--accent);margin:0 0 12px;line-height:1}
+.lp-price-unit{font-size:16px;font-weight:400;color:var(--muted);letter-spacing:0}
 .lp-price-desc{font-size:14px;color:var(--muted);line-height:1.75;margin:0 0 24px}
 .lp-price-features{list-style:none;padding:0;margin:0 0 28px;display:flex;flex-direction:column;gap:9px}
 .lp-price-features li{display:flex;align-items:center;gap:10px;font-size:14px;color:#d8d0e8}
@@ -213,6 +215,7 @@ body.lp-light-body{background:#f4eeff}
 .lp-light .lp-price-card{background:#fff;border-color:#ddd5ef}
 .lp-light .lp-price-featured{background:#fff5fb;border-color:#c4186e60}
 .lp-light .lp-price-label{color:#1a0d2e}
+.lp-light .lp-price-amount{color:#c4186e}
 .lp-light .lp-price-features li{color:#3d2b56}
 .lp-light .lp-reviews-section{background:#faf8ff}
 .lp-light .lp-review-card{background:#fff;border-color:#ddd5ef}
