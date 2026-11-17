@@ -2,6 +2,7 @@ import ClientReviews from '@/components/client-reviews';
 import Link from 'next/link';
 import { ExpertiseCards } from '@/components/expertise-cards';
 import { CodeScreen } from '@/components/code-screen';
+import { HeroSlideshow } from '@/components/hero-slideshow';
 import { pageMetadata } from '@/lib/seo';
 export const metadata = pageMetadata('/');
 // Brand marks from Simple Icons (simpleicons.org, CC0).
@@ -29,7 +30,7 @@ export default function Home() {
       </div>
       <div className="hero-composition">
         <div className="hero-explore"><div className="hero-steps"><span className="hero-steps-title">HOW IT STARTS</span><ol>{startSteps.map((s, i) => <li key={s}><span>0{i + 1}</span>{s}</li>)}</ol></div><a href="#creative-approach"><span className="mouse-outline"/> Scroll to learn more</a><div className="specialty-tags">{specialties.map(s => <span key={s}>{s}</span>)}</div><p>YOUR VISION. OUR CRAFT.</p></div>
-        <figure className="hero-artwork"><img src="/digital-future.webp" srcSet="/digital-future-480.webp 480w, /digital-future-800.webp 800w, /digital-future.webp 1536w" sizes="(max-width: 760px) 90vw, 50vw" decoding="async" alt="Futuristic chrome figure beside a glowing pink portal" width="1536" height="1024" fetchPriority="high"/><figcaption><span>IMAGINATION, ENGINEERED.</span><span>01 / DEVELOPERZ HUB</span></figcaption></figure>
+        <HeroSlideshow />
       </div>
       <div className="hero-side-label" aria-hidden="true">DESIGN — DEVELOPMENT — POSSIBILITY</div>
     </section>
