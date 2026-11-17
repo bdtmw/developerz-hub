@@ -177,7 +177,7 @@ body.lp-light-body{background:#f4eeff}
 .lp-light .lp-form-sub{color:#60497a}
 .lp-light .lp-label{color:#3d2b56}
 .lp-light .lp-label input,.lp-light .lp-label textarea{background:#fff;border-color:#d0c5e8;color:#1a0d2e}
-.lp-light .lp-label select{background:#fff;border-color:#d0c5e8;color:#1a0d2e;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2360497a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
+.lp-light .lp-label select{background-color:#fff;border-color:#d0c5e8;color:#1a0d2e;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2360497a' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E")}
 .lp-light .lp-label input::placeholder,.lp-light .lp-label textarea::placeholder{color:#9080aa}
 .lp-light .lp-label input:focus,.lp-light .lp-label textarea:focus{border-color:#c4186e80}
 .lp-light .lp-form-note{color:#9080aa}
