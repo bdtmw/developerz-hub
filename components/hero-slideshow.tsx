@@ -1,5 +1,5 @@
 'use client';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 
 const slides = [
   {
@@ -25,14 +25,29 @@ const slides = [
   },
 ];
 
+const INTERVAL = 5000;
+
 export function HeroSlideshow() {
   const [active, setActive] = useState(0);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const reducedMotion = useRef(false);
+
+  const startTimer = useCallback(() => {
+    if (reducedMotion.current) return;
+    if (timerRef.current) clearInterval(timerRef.current);
+    timerRef.current = setInterval(() => setActive(n => (n + 1) % slides.length), INTERVAL);
+  }, []);
 
   useEffect(() => {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    const id = setInterval(() => setActive(n => (n + 1) % slides.length), 5000);
-    return () => clearInterval(id);
-  }, []);
+    reducedMotion.current = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    startTimer();
+    return () => { if (timerRef.current) clearInterval(timerRef.current); };
+  }, [startTimer]);
+
+  const goTo = (i: number) => {
+    setActive(i);
+    startTimer(); // reset the countdown so it doesn't fire immediately after a manual tap
+  };
 
   return (
     <figure className="hero-artwork hero-slideshow">
@@ -57,7 +72,7 @@ export function HeroSlideshow() {
             key={i}
             type="button"
             className={`hero-slide-dot${i === active ? ' dot-active' : ''}`}
-            onClick={() => setActive(i)}
+            onClick={() => goTo(i)}
           />
         ))}
       </div>
