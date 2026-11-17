@@ -2,14 +2,14 @@
 import { useState, type FormEvent } from 'react';
 
 const SERVICES = [
+  'React / Next.js application (new build)',
+  'React bug fix or production issue',
+  'Next.js migration or upgrade',
   'New website (design + build)',
-  'React / Next.js application',
-  'WordPress or WooCommerce site',
+  'Full-stack application (Node.js / API)',
   'E-commerce store',
-  'Backend API or database',
-  'Mobile app (iOS / Android / Flutter)',
+  'WordPress or WooCommerce site',
   'Performance audit or Core Web Vitals fix',
-  'Shopify development',
   'Dedicated developer — ongoing retainer',
   'Something else — describe below',
 ];
@@ -70,7 +70,7 @@ export function LeadForm({ id = 'lp-form' }: { id?: string }) {
         </label>
       </div>
       <label className="lp-label">
-        What would you like to build?
+        What do you need?
         <select name="service">
           {SERVICES.map(s => <option key={s}>{s}</option>)}
         </select>
