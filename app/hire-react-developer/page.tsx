@@ -1,5 +1,6 @@
 import './lp.css';
 import { LeadForm } from './lead-form';
+import { BodyClass } from './body-class';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -10,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 const TICKER = [
-  'Alex just briefed a Next.js project — London · 2 min ago',
-  "Sarah's e-commerce store launched today — Manchester",
-  'James booked a React developer — New York · 1 hr ago',
-  "Priya's WordPress site went live — Toronto",
-  'Liam submitted a full-stack app brief — Dubai · 3 min ago',
-  'Chen started a mobile app project — Singapore · 20 min ago',
+  "Alex's React dashboard went live — London · 2 min ago",
+  "Sarah's Next.js migration completed — Manchester · 1 hr ago",
+  'James fixed a React production bug — New York · just now',
+  "Priya's Next.js App Router refactor shipped — Toronto · 45 min ago",
+  'Liam started a React component library — Dubai · 3 min ago',
+  "Chen's Next.js e-commerce build launched — Singapore · 20 min ago",
 ];
 
 const PROBLEMS = [
@@ -50,6 +51,7 @@ const FAQS = [
 export default function Page() {
   return (
     <main id="main" className="template-lp">
+      <BodyClass className="has-lp-ticker" />
 
       {/* ── Ticker ── */}
       <div className="lp-ticker" aria-hidden="true">

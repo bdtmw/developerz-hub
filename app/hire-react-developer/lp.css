@@ -2,7 +2,11 @@
 .template-lp{background:var(--bg)}
 
 /* Ticker */
-.lp-ticker{background:#ed53a6;overflow:hidden;padding:11px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+/* Ticker sits above the sticky header via body class hook */
+.has-lp-ticker .header{top:38px}
+.lp-ticker{position:fixed;top:0;left:0;right:0;z-index:30;background:#ed53a6;overflow:hidden;padding:11px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+/* Offset page content so nothing hides under the fixed ticker+header */
+.template-lp{padding-top:38px}
 .lp-tick-track{display:flex;width:max-content;animation:lp-tick 50s linear infinite;gap:0}
 .lp-ticker:hover .lp-tick-track{animation-play-state:paused}
 .lp-tick-item{display:inline-flex;align-items:center;white-space:nowrap;font-size:12px;letter-spacing:.5px;color:#fff;font-weight:500;padding:0 42px}
