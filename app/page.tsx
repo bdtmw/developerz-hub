@@ -13,7 +13,7 @@ const certifications = [
   { name: 'BigCommerce', role: 'Partner', color: '#F5F3FB', label: 'BigCommerce Partner', mark: 'M12.645 13.663h3.027c.861 0 1.406-.474 1.406-1.235 0-.717-.545-1.234-1.406-1.234h-3.027c-.1 0-.187.086-.187.172v2.125c.015.1.086.172.187.172zm0 4.896h3.128c.961 0 1.535-.488 1.535-1.35 0-.746-.545-1.35-1.535-1.35h-3.128c-.1 0-.187.087-.187.173v2.34c.015.115.086.187.187.187zM23.72.053l-8.953 8.93h1.464c2.281 0 3.63 1.435 3.63 3 0 1.235-.832 2.14-1.722 2.541-.143.058-.143.259.014.316 1.033.402 1.765 1.48 1.765 2.742 0 1.78-1.19 3.202-3.5 3.202h-6.342c-.1 0-.187-.086-.187-.172V13.85L.062 23.64c-.13.13-.043.359.143.359h23.631a.16.16 0 0 0 .158-.158V.182c.043-.158-.158-.244-.273-.13z' },
   { name: 'Webflow', role: 'Partner', color: '#4B8DFF', label: 'Webflow Partner', mark: 'm24 4.515-7.658 14.97H9.149l3.205-6.204h-.144C9.566 16.713 5.621 18.973 0 19.485v-6.118s3.596-.213 5.71-2.435H0V4.515h6.417v5.278l.144-.001 2.622-5.277h4.854v5.244h.144l2.72-5.244H24Z' },
   { name: 'Wix', role: 'Partner', color: '#F5F3FB', label: 'Wix Partner', wordmark: true, mark: 'm0 7.354 2.113 9.292h.801a1.54 1.54 0 0 0 1.506-1.218l1.351-6.34a.171.171 0 0 1 .167-.137c.08 0 .15.058.167.137l1.352 6.34a1.54 1.54 0 0 0 1.506 1.218h.805l2.113-9.292h-.565c-.62 0-1.159.43-1.296 1.035l-1.26 5.545-1.106-5.176a1.76 1.76 0 0 0-2.19-1.324c-.639.176-1.113.716-1.251 1.365l-1.094 5.127-1.26-5.537A1.33 1.33 0 0 0 .563 7.354H0zm13.992 0a.951.951 0 0 0-.951.95v8.342h.635a.952.952 0 0 0 .951-.95V7.353h-.635zm1.778 0 3.158 4.66-3.14 4.632h1.325c.368 0 .712-.181.918-.486l1.756-2.59a.12.12 0 0 1 .197 0l1.754 2.59c.206.305.55.486.918.486h1.326l-3.14-4.632L24 7.354h-1.326c-.368 0-.712.181-.918.486l-1.772 2.617a.12.12 0 0 1-.197 0L18.014 7.84a1.108 1.108 0 0 0-.918-.486H15.77z' },
-  { name: 'Google', role: 'Project Management Certificate', color: '#4285F4', label: 'Google Certified Project Management', img: '/google-pm-cert.png', mark: '' },
+  { name: 'Google', role: 'Project Management Certificate', color: '#4285F4', label: 'Google Certified Project Management', img: '/google-g.png', mark: '' },
 ];
 const startSteps = ['Tell your story', 'Make it concrete', 'Review and send'];
 const specialties = ['Web development', 'WordPress', 'Full-stack', 'Mobile apps', 'Cloud & APIs', 'AI applications'];
@@ -36,7 +36,7 @@ export default function Home() {
     <section className="cert-marquee" aria-label="Developer certifications">
       <p className="cert-sr">Our developers are certified: {certifications.map(c => c.label).join(', ')}.</p>
       <div className="cert-track" aria-hidden="true">
-        {[0, 1].map(group => <ul key={group}>{Array.from({ length: 2 }, () => certifications).flat().map((c, i) => <li key={i} className={`cert-${c.name.toLowerCase()}`}>{c.img ? <img src={c.img} alt={c.label} className="cert-badge-img"/> : <><svg viewBox="0 0 24 24" width="32" height="32" fill={c.color}><path d={c.mark}/></svg>{!c.wordmark && <b>{c.name}</b>}<i>{c.role}</i></>}</li>)}</ul>)}
+        {[0, 1].map(group => <ul key={group}>{Array.from({ length: 2 }, () => certifications).flat().map((c, i) => <li key={i} className={`cert-${c.name.toLowerCase()}`}>{c.img ? <img src={c.img} alt="" className="cert-badge-img"/> : <svg viewBox="0 0 24 24" width="32" height="32" fill={c.color}><path d={c.mark}/></svg>}{!c.wordmark && <b>{c.name}</b>}<i>{c.role}</i></li>)}</ul>)}
       </div>
     </section>
     <section id="creative-approach" className="creative-split section">

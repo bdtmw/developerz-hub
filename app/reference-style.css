@@ -24,7 +24,7 @@ html{scroll-padding-top:110px}.button{background:#d91b76}.button:hover{backgroun
 @media(max-width:760px){html{scroll-padding-top:90px}}
 
 /* Certification marquee (home, after hero) */
-.cert-badge-img{height:40px;width:auto;object-fit:contain;flex-shrink:0;border-radius:4px}
+.cert-badge-img{width:32px;height:32px;object-fit:contain;flex-shrink:0}
 .cert-marquee{position:relative;overflow:hidden;background:transparent;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;-webkit-mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent);mask-image:linear-gradient(90deg,transparent,#000 9%,#000 91%,transparent)}
 .cert-track{display:flex;width:max-content;animation:cert-scroll 64s linear infinite}
 .cert-marquee:hover .cert-track{animation-play-state:paused}
