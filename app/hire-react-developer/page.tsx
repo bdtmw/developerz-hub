@@ -2,6 +2,7 @@ import './lp.css';
 import { LeadForm } from './lead-form';
 import { BodyClass } from './body-class';
 import { ThemeToggle } from './theme-toggle';
+import { ExpertBar } from './expert-bar';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
@@ -54,6 +55,7 @@ export default function Page() {
     <main id="main" className="template-lp">
       <BodyClass className="has-lp-ticker" />
       <ThemeToggle />
+      <ExpertBar />
 
       {/* ── Ticker ── */}
       <div className="lp-ticker" aria-hidden="true">
@@ -67,9 +69,9 @@ export default function Page() {
       {/* ── Hero ── */}
       <section className="lp-hero">
         <div className="lp-headline">
-          <p className="eyebrow lp-eyebrow">REACT &amp; NEXT.JS DEVELOPERS</p>
-          <h1>Hire a React Developer.<br/><em>Project Brief to First Call<br/>in 24 Hours.</em></h1>
-          <p className="lp-sub">React, Next.js, full-stack and frontend development. Tell us what you need — we scope it, staff it and start building.</p>
+          <p className="eyebrow lp-eyebrow">REACT, NEXT.JS &amp; FULL-STACK DEVELOPMENT</p>
+          <h1>Hire a React Developer.<br/><em>Complete Fixes or New Builds.<br/>Start in 10 Minutes.</em></h1>
+          <p className="lp-sub">React, Next.js and full-stack development. Whether you need a complete page rebuild or a production fix — brief your project in minutes and we scope, staff and start building.</p>
           <ul className="lp-trust">
             <li>1,000+ projects delivered globally</li>
             <li>Dedicated project manager on every job</li>
@@ -80,7 +82,7 @@ export default function Page() {
             <a href="#lp-form" className="button">Get a Free Quote →</a>
             <a href="mailto:info@developerzhub.com" className="lp-link-cta">Email us directly ↗</a>
           </div>
-          <p className="lp-hero-note">No spam. We reply within 24 hours during business hours.</p>
+          <p className="lp-hero-note">Brief takes under 10 minutes. We respond within 24 hours.</p>
         </div>
 
         <div className="lp-form-col">
