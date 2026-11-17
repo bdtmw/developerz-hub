@@ -4,8 +4,9 @@ import Link from 'next/link';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Hire a Web Developer | Developerz Hub — Response in 24 Hours',
-  description: 'Hire expert web, React, WordPress and full-stack developers. Tell us what you need — get a scoped brief and response within 24 hours. No lock-in.',
+  title: 'Hire a React Developer | Developerz Hub — Response in 24 Hours',
+  description: 'Hire expert React and Next.js developers. Tell us what you need — get a scoped brief and response within 24 hours. No lock-in.',
+  robots: { index: false, follow: false },
 };
 
 const TICKER = [
@@ -62,9 +63,9 @@ export default function Page() {
       {/* ── Hero ── */}
       <section className="lp-hero">
         <div className="lp-headline">
-          <p className="eyebrow lp-eyebrow">RESPONSE IN 24 HOURS</p>
-          <h1>Hire a Web Developer.<br/><em>Project Brief to First Call<br/>in 24 Hours.</em></h1>
-          <p className="lp-sub">Web, mobile, e-commerce and full-stack development. Tell us what you need — we scope it, staff it and start building.</p>
+          <p className="eyebrow lp-eyebrow">REACT &amp; NEXT.JS DEVELOPERS — RESPONSE IN 24 HOURS</p>
+          <h1>Hire a React Developer.<br/><em>Project Brief to First Call<br/>in 24 Hours.</em></h1>
+          <p className="lp-sub">React, Next.js, full-stack and frontend development. Tell us what you need — we scope it, staff it and start building.</p>
           <ul className="lp-trust">
             <li>1,000+ projects delivered globally</li>
             <li>Dedicated project manager on every job</li>
