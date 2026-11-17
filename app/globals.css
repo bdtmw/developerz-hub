@@ -14,3 +14,35 @@
 .cta-section{background:radial-gradient(ellipse at 80% 15%,#9c246e,#51183e 65%,#2f1429);border-color:#d390ba2a}.cta-section em{color:#ffa2d1}.cta-spark{color:#ee84c3}.service-details{background:#1c1020}.brief-form{background:#211223}.brief-form input,.brief-form select,.brief-form textarea{background:#150b17;border-color:#64425d}.brief-result{background:#30182a;border-color:#cb8aaa}.faq a,.article a{color:#ff9acd}.article-callout{border-color:#ef6cb4;background:#2f192a}.mobile-nav nav{background:#231123}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:#ff9acd}
 @media(max-width:760px){.brand-logo img{width:200px;height:auto}}
+
+/* ── Site theme toggle ── */
+.site-theme-toggle{background:none;border:1px solid #ffffff20;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#d6d2e2;cursor:pointer;transition:border-color .2s,color .2s;flex-shrink:0;padding:0}
+.site-theme-toggle:hover{border-color:#f263b060;color:#f263b0}
+
+/* ── Global light theme ── */
+body.site-light{--bg:#faf7ff;--panel:#f0eaf8;--ink:#1a0d2e;--muted:#60497a;--accent:#c4186e;--line:#e0d5ef;background:#faf7ff;color:#1a0d2e}
+body.site-light .header{background:#faf7ffcc;border-bottom-color:#e0d5ef}
+body.site-light .desktop-nav{color:#3d2b56}
+body.site-light .desktop-nav a{color:#3d2b56}
+body.site-light .desktop-nav a:hover{color:#c4186e}
+body.site-light .nav-cta{border-color:#c4186e80;color:#1a0d2e}
+body.site-light .hero{background:radial-gradient(ellipse at 82% 48%,#c4186e18,transparent 50%),radial-gradient(ellipse at 0 0,#8b1f6a18,transparent 55%)}
+body.site-light .service-card{background:#fff;border-color:#e8d5ef}
+body.site-light .service-card:hover{border-color:#c4186e79}
+body.site-light .service-icon{color:#c4186e}
+body.site-light .tech-strip{color:#3d2b56;border-color:#e0d5ef}
+body.site-light .tech-strip b,.site-light .tech-strip strong{color:#3d2b56}
+body.site-light .approach{background:#ede6f9}
+body.site-light .code-window{background:#f5f0fb;border-color:#cbb5df}
+body.site-light .code-lines{color:#2d1a40}
+body.site-light .window-bar{color:#8060a0;border-color:#e0d5ef}
+body.site-light .service-details{background:#ede6f9}
+body.site-light .brief-form{background:#fff;border-color:#e0d5ef}
+body.site-light .brief-form input,.site-light .brief-form select,.site-light .brief-form textarea{background:#faf7ff;border-color:#cbb5df;color:#1a0d2e}
+body.site-light .brief-result{background:#f0eaf8;border-color:#c4186e80}
+body.site-light .faq details{border-color:#e0d5ef}
+body.site-light .faq a,.site-light .article a{color:#c4186e}
+body.site-light .article-callout{background:#f0eaf8;border-color:#c4186e}
+body.site-light .mobile-nav nav{background:#faf7ff;border-color:#e0d5ef}
+body.site-light .site-theme-toggle{border-color:#e0d5ef;color:#3d2b56}
+body.site-light .site-theme-toggle:hover{border-color:#c4186e;color:#c4186e}
