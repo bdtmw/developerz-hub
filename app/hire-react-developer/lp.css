@@ -157,14 +157,14 @@
 }
 
 /* ── Expert availability bar ── */
-.lp-expert-bar{position:fixed;bottom:0;left:0;right:0;z-index:48;background:#0a1f0a;border-top:1px solid #1c4a1c;padding:11px 5.5%}
+.lp-expert-bar{position:fixed;bottom:0;left:0;right:0;z-index:48;background:#1c112b;border-top:1px solid #ed53a630;padding:11px 5.5%}
 .lp-expert-bar-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
-.lp-expert-bar-status{display:flex;align-items:center;gap:10px;font-size:14px;color:#d4f0d4}
-.lp-expert-dot{width:9px;height:9px;border-radius:50%;background:#22c55e;flex-shrink:0;animation:lp-pulse-dot 2s ease infinite}
-@keyframes lp-pulse-dot{0%,100%{box-shadow:0 0 0 0 #22c55e60}50%{box-shadow:0 0 0 6px #22c55e00}}
+.lp-expert-bar-status{display:flex;align-items:center;gap:10px;font-size:14px;color:#e0d5ed}
+.lp-expert-dot{width:9px;height:9px;border-radius:50%;background:#ed53a6;flex-shrink:0;animation:lp-pulse-dot 2s ease infinite}
+@keyframes lp-pulse-dot{0%,100%{box-shadow:0 0 0 0 #ed53a660}50%{box-shadow:0 0 0 6px #ed53a600}}
 .lp-expert-bar-ctas{display:flex;gap:10px;flex-shrink:0}
-.lp-expert-btn-outline{padding:9px 18px;border:1px solid #22c55e;border-radius:6px;font-size:13px;font-weight:600;color:#22c55e;white-space:nowrap;transition:background .15s}.lp-expert-btn-outline:hover{background:#22c55e20}
-.lp-expert-btn-fill{padding:9px 18px;background:#22c55e;border-radius:6px;font-size:13px;font-weight:600;color:#0a1f0a;white-space:nowrap;transition:opacity .15s}.lp-expert-btn-fill:hover{opacity:.9}
+.lp-expert-btn-outline{padding:9px 18px;border:1px solid #ed53a660;border-radius:6px;font-size:13px;font-weight:600;color:#ed53a6;white-space:nowrap;transition:background .15s}.lp-expert-btn-outline:hover{background:#ed53a620}
+.lp-expert-btn-fill{padding:9px 18px;background:#ed53a6;border-radius:6px;font-size:13px;font-weight:600;color:#fff;white-space:nowrap;transition:opacity .15s}.lp-expert-btn-fill:hover{opacity:.88}
 /* Keep content from hiding under fixed bar */
 .template-lp{padding-bottom:52px}
 /* Lift theme toggle above bar */
