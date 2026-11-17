@@ -4,7 +4,7 @@ import { Children, useEffect, useRef, useState } from 'react';
 const pad = (n: number) => String(n).padStart(2, '0');
 
 // Horizontal card slider with a counter, a progress bar and previous/next buttons.
-export function ServiceSlider({ children }: { children: React.ReactNode }) {
+export function ServiceSlider({ children, stepPx = 484, label = 'services' }: { children: React.ReactNode; stepPx?: number; label?: string }) {
   const total = Children.count(children);
   const track = useRef<HTMLDivElement>(null);
   const [state, setState] = useState({ progress: 0, seen: Math.min(total, 1), scrollable: true });
@@ -31,7 +31,7 @@ export function ServiceSlider({ children }: { children: React.ReactNode }) {
     const el = track.current;
     if (!el) return;
     const max = el.scrollWidth - el.clientWidth;
-    el.scrollTo({ left: Math.max(0, Math.min(max, el.scrollLeft + direction * 484)), behavior: 'smooth' });
+    el.scrollTo({ left: Math.max(0, Math.min(max, el.scrollLeft + direction * stepPx)), behavior: 'smooth' });
   };
   const atStart = state.progress < 0.01;
   const atEnd = state.progress > 0.99;
@@ -39,7 +39,7 @@ export function ServiceSlider({ children }: { children: React.ReactNode }) {
   return <div className="sv-slider">
     <div className="sv-track" ref={track}>{children}</div>
     <div className="sv-controls">
-      <p className="sv-count" aria-live="polite"><b>{pad(state.seen)}</b><span aria-hidden="true">/</span>{pad(total)}<span className="sv-count-label">services</span></p>
+      <p className="sv-count" aria-live="polite"><b>{pad(state.seen)}</b><span aria-hidden="true">/</span>{pad(total)}<span className="sv-count-label">{label}</span></p>
       <div className="sv-progress" aria-hidden="true"><span style={{ transform: `scaleX(${0.12 + state.progress * 0.88})` }}/></div>
       <div className="sv-buttons">
         <button type="button" onClick={() => move(-1)} disabled={atStart} aria-label="Previous services">
