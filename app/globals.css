@@ -101,3 +101,10 @@ body.site-light .faq details p{color:#60497a}
 body.site-light .article li{color:#60497a}
 body.site-light .narrow p,.site-light .article p{color:#60497a}
 body.site-light .intro-description{color:#60497a}
+/* CTA section keeps its dark branded background — force light text */
+body.site-light .cta-section{color:#f5eeff}
+body.site-light .cta-section h2{color:#fff}
+body.site-light .cta-section em{color:#ffa2d1}
+body.site-light .cta-section p{color:#e8d5f5}
+body.site-light .cta-section a{color:#ffa2d1}
+body.site-light .cta-spark{color:#ee84c3}
