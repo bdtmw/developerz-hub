@@ -104,7 +104,7 @@ export default function Page() {
       <section className="cta-section">
         <span className="cta-spark" aria-hidden="true">✦</span>
         <h2>Hire a developer<br />or <em>brief a project.</em></h2>
-        <p style={{ color: 'var(--muted)', fontSize: '16px', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
+        <p style={{ fontSize: '16px', marginBottom: '32px', position: 'relative', zIndex: 1 }}>
           Email <a href="mailto:info@developerzhub.com" style={{ color: 'inherit' }}>info@developerzhub.com</a> with a short overview,
           or use the project brief form to get started.
         </p>

@@ -11,7 +11,7 @@
 .art:before{background:#a82b8454}.art-core{background:linear-gradient(135deg,#ffe0f1 0%,#e979b5 18%,#a82d7b 40%,#45173f 70%,#ca69aa 100%);box-shadow:inset 8px 7px 13px #fff9,inset -14px -10px 25px #21061baa,25px 35px 50px #0006,0 0 70px #d561ad2b}.core-face{background:linear-gradient(135deg,#d688bd55,#26111f);border-color:#f7a6d366;color:#ffe4f2;text-shadow:0 0 10px #ff98d6}.core-face span:nth-child(2){color:#ef8dc0}.art-orbit{border-color:#f2a0cf44}.orbit-two{border-color:#cc7fbc22}.art-tag{background:#291723e6;border-color:#e3a0c929}.tag-one i{background:#fb88c2}.tag-two span,.art-star{color:#ffb4db}.art-caption{color:#ae7c9d}
 .service-card{background:linear-gradient(135deg,#281729,#1b111e)}.service-card:hover{border-color:#f78bbe79}.service-icon,.process>div>span{color:#f690c5}.approach{background:#170e1b}.approach-visual{background:radial-gradient(ellipse at center,#75276140,transparent 70%)}.code-window{background:#201321;border-color:#91547747}.code-lines b{color:#f094ca}.code-lines em{color:#efb1c7}.code-status .status-dot{background:#fa70b0}
 .cost-art{background:radial-gradient(ellipse at 40% 25%,#a24f85,#3f2038 70%)}.startup-art{background:radial-gradient(ellipse at 80% 10%,#855085,#301534 80%)}.giant-symbol{color:#ffc2e5;text-shadow:14px 16px 0 #de95bc40}.startup-art .giant-symbol{color:#e8a9d7}.abstract-circle{border-color:#ffbcdf55;box-shadow:0 0 0 25px #eca7ce08,0 0 0 50px #eca7ce08}.guide-card:hover h3{color:#ff9dcb}
-.cta-section{background:radial-gradient(ellipse at 80% 15%,#9c246e,#51183e 65%,#2f1429);border-color:#d390ba2a}.cta-section em{color:#ffa2d1}.cta-spark{color:#ee84c3}.service-details{background:#1c1020}.brief-form{background:#211223}.brief-form input,.brief-form select,.brief-form textarea{background:#150b17;border-color:#64425d}.brief-result{background:#30182a;border-color:#cb8aaa}.faq a,.article a{color:#ff9acd}.article-callout{border-color:#ef6cb4;background:#2f192a}.mobile-nav nav{background:#231123}
+.cta-section{background:radial-gradient(ellipse at 80% 15%,#9c246e,#51183e 65%,#2f1429);border-color:#d390ba2a}.cta-section h2{color:#fff}.cta-section p{color:#f0d8f0}.cta-section em{color:#ffa2d1}.cta-spark{color:#ee84c3}.service-details{background:#1c1020}.brief-form{background:#211223}.brief-form input,.brief-form select,.brief-form textarea{background:#150b17;border-color:#64425d}.brief-result{background:#30182a;border-color:#cb8aaa}.faq a,.article a{color:#ff9acd}.article-callout{border-color:#ef6cb4;background:#2f192a}.mobile-nav nav{background:#231123}
 a:focus-visible,button:focus-visible,summary:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline-color:#ff9acd}
 @media(max-width:760px){.brand-logo img{width:200px;height:auto}}
 
@@ -105,6 +105,6 @@ body.site-light .intro-description{color:#60497a}
 body.site-light .cta-section{color:#f5eeff}
 body.site-light .cta-section h2{color:#fff}
 body.site-light .cta-section em{color:#ffa2d1}
-body.site-light .cta-section p{color:#e8d5f5}
+body.site-light .cta-section p{color:#f0d8f0}
 body.site-light .cta-section a{color:#ffa2d1}
 body.site-light .cta-spark{color:#ee84c3}
