@@ -232,7 +232,7 @@ body.site-light .specialty-tags span{background:#f0e8f8;color:#3d2b56;border-col
 body.site-light .hero-steps-title{color:#8b4080}
 body.site-light .hero-steps li{color:#2d1a3e}
 body.site-light .hero-steps ol{border-color:#e0d5ef}
-body.site-light .code-screen{opacity:.05}
+body.site-light .code-screen{opacity:.09;color:#6a4a8a}
 /* Stats section */
 body.site-light .stats-section{background:linear-gradient(180deg,#f2eaf9,#e8daf5);border-color:#e0d5ef}
 body.site-light .stat-disc{background:radial-gradient(circle at 30% 25%,#fff,#f0e8f8 70%);border-color:#c4186e40;box-shadow:0 24px 60px #c4186e0c,inset 0 1px 0 #c4186e14}
