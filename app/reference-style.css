@@ -286,6 +286,11 @@ body.site-light .about-step-num{color:#c4186e}
 /* Hire developers page */
 body.site-light .hd-hero{background:radial-gradient(ellipse at 80% 60%,#c4186e14,transparent 55%)}
 body.site-light .hd-match-num{color:#c4186e}
+/* Gradient-text elements: override color:transparent with solid colours */
+body.site-light .editorial-headline h1 em{background:none;-webkit-background-clip:unset;background-clip:unset;color:#c4186e}
+body.site-light .stat-disc dd{background:none;-webkit-background-clip:unset;background-clip:unset;color:#c4186e}
+body.site-light .about-stat strong{background:none;-webkit-background-clip:unset;background-clip:unset;color:#c4186e}
+body.site-light .sv-count b{background:none;-webkit-background-clip:unset;background-clip:unset;color:#c4186e}
 body.site-light .text-link{color:#c4186e}
 body.site-light .hd-match-link{color:#c4186e}
 body.site-light .hd-match-more a{color:#c4186e}
