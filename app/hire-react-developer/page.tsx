@@ -186,20 +186,39 @@ export default function Page() {
           <p className="eyebrow">CLIENT REVIEWS</p>
           <h2>Good work.<br/><em>In our clients' words.</em></h2>
         </div>
-        <div className="lp-reviews-grid">
-          {REVIEWS.map(r => (
-            <figure key={r.name} className="lp-review-card">
-              <div className="lp-review-top">
-                <span className="lp-review-project">{r.project}</span>
-                <span className="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★ <b>5.0</b></span>
-              </div>
-              <blockquote><p>&#8220;{r.quote}&#8221;</p></blockquote>
-              <figcaption>
-                <span className="lp-review-avatar" aria-hidden="true">{r.name[0]}</span>
-                <span><strong>{r.name}</strong><small>{r.country}</small></span>
-              </figcaption>
-            </figure>
-          ))}
+        <div className="lp-marquee-wrap" aria-label="Client reviews">
+          {/* Row 1 — scrolls left */}
+          <div className="lp-marquee-track lp-marquee-left" aria-hidden="true">
+            {[...REVIEWS.slice(0, 5), ...REVIEWS.slice(0, 5)].map((r, i) => (
+              <figure key={i} className="lp-review-card">
+                <div className="lp-review-top">
+                  <span className="lp-review-project">{r.project}</span>
+                  <span className="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★ <b>5.0</b></span>
+                </div>
+                <blockquote><p>&#8220;{r.quote}&#8221;</p></blockquote>
+                <figcaption>
+                  <span className="lp-review-avatar" aria-hidden="true">{r.name[0]}</span>
+                  <span><strong>{r.name}</strong><small>{r.country}</small></span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+          {/* Row 2 — scrolls right */}
+          <div className="lp-marquee-track lp-marquee-right" aria-hidden="true">
+            {[...REVIEWS.slice(5), ...REVIEWS.slice(5)].map((r, i) => (
+              <figure key={i} className="lp-review-card">
+                <div className="lp-review-top">
+                  <span className="lp-review-project">{r.project}</span>
+                  <span className="lp-review-stars" aria-label="Rated 5 out of 5">★★★★★ <b>5.0</b></span>
+                </div>
+                <blockquote><p>&#8220;{r.quote}&#8221;</p></blockquote>
+                <figcaption>
+                  <span className="lp-review-avatar" aria-hidden="true">{r.name[0]}</span>
+                  <span><strong>{r.name}</strong><small>{r.country}</small></span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </div>
       </section>
 

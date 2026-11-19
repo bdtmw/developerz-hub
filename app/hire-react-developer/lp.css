@@ -92,9 +92,17 @@
 .lp-price-features li::before{content:'✓';flex-shrink:0;color:var(--accent);font-size:11px}
 
 /* Reviews */
-.lp-reviews-section{padding:90px 5.5%}
-.lp-reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.lp-review-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px;margin:0;display:flex;flex-direction:column;gap:16px}
+.lp-reviews-section{padding:90px 0}
+.lp-reviews-section .lp-section-header{padding:0 5.5%;margin-bottom:48px}
+.lp-marquee-wrap{display:flex;flex-direction:column;gap:16px;overflow:hidden;mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%);-webkit-mask-image:linear-gradient(to right,transparent 0,#000 8%,#000 92%,transparent 100%)}
+.lp-marquee-track{display:flex;gap:16px;width:max-content}
+@keyframes lp-scroll-left{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+@keyframes lp-scroll-right{0%{transform:translateX(-50%)}100%{transform:translateX(0)}}
+.lp-marquee-left{animation:lp-scroll-left 36s linear infinite}
+.lp-marquee-right{animation:lp-scroll-right 40s linear infinite}
+.lp-marquee-wrap:hover .lp-marquee-track{animation-play-state:paused}
+@media(prefers-reduced-motion:reduce){.lp-marquee-left,.lp-marquee-right{animation:none}}
+.lp-review-card{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:28px;margin:0;display:flex;flex-direction:column;gap:16px;width:320px;flex-shrink:0}
 .lp-review-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
 .lp-review-project{font-size:12px;letter-spacing:.5px;color:var(--muted)}
 .lp-review-stars{font-size:12px;color:#ffd166;white-space:nowrap}.lp-review-stars b{color:#e0d5ed;margin-left:4px}
@@ -178,7 +186,6 @@
   .lp-process-grid{grid-template-columns:1fr}
   .lp-pricing-grid{grid-template-columns:1fr}
   .lp-cases-grid{grid-template-columns:1fr}
-  .lp-reviews-grid{grid-template-columns:1fr}
   .lp-faq-inner{grid-template-columns:1fr}
   .lp-bottom-inner{grid-template-columns:1fr}
   .lp-bottom-form{max-width:500px}
@@ -190,7 +197,9 @@
   .lp-form-row{grid-template-columns:1fr}
   .lp-problems{padding:60px 6%}
   .lp-problems-grid{grid-template-columns:1fr}
-  .lp-process-section,.lp-pricing-section,.lp-reviews-section,.lp-cases-section,.lp-faq-section,.lp-bottom-cta{padding:60px 6%}
+  .lp-process-section,.lp-pricing-section,.lp-cases-section,.lp-faq-section,.lp-bottom-cta{padding:60px 6%}
+  .lp-reviews-section{padding:60px 0}
+  .lp-reviews-section .lp-section-header{padding:0 6%}
   .lp-section-header{margin-bottom:36px}
   .lp-stats .lp-stat:first-child,.lp-stats .lp-stat:nth-child(3){padding-left:6%}
   .lp-stats .lp-stat:last-child{padding-right:6%}
