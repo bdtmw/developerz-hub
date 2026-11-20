@@ -1,0 +1,162 @@
+/* ── Temp homepage ── */
+
+.tmp-page {
+  min-height: calc(100vh - 108px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 6%;
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse at 15% 25%, #f263b016, transparent 50%),
+    radial-gradient(ellipse at 85% 70%, #2a1a4020, transparent 55%);
+}
+
+.tmp-inner {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ── Status row ── */
+.tmp-status-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.tmp-status-sep {
+  color: var(--line);
+  font-size: 18px;
+  line-height: 1;
+}
+
+.tmp-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 13px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  border: 1px solid;
+}
+
+/* Maintenance — accent */
+.tmp-pill-maintenance {
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+.tmp-pill-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  animation: tmp-dot 2s ease-in-out infinite;
+}
+
+@keyframes tmp-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+
+/* Relaunching — muted warm */
+.tmp-pill-relaunch {
+  color: #e8a44a;
+  background: rgba(232, 164, 74, 0.1);
+  border-color: rgba(232, 164, 74, 0.2);
+}
+
+/* Coming soon — subtle */
+.tmp-pill-soon {
+  color: var(--muted);
+  background: color-mix(in srgb, var(--muted) 8%, transparent);
+  border-color: var(--line);
+}
+
+/* ── Heading ── */
+.tmp-heading {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: clamp(46px, 7vw, 88px);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -0.055em;
+  margin: 0;
+  text-wrap: balance;
+}
+
+/* ── Body ── */
+.tmp-body {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.8;
+  max-width: 460px;
+  margin: 0;
+}
+
+/* ── CTA ── */
+.tmp-cta {
+  margin-top: 4px;
+}
+
+/* ── Note ── */
+.tmp-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.tmp-note a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── Decorative sparks ── */
+.tmp-sparks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.tmp-spark {
+  position: absolute;
+  color: var(--accent);
+  opacity: 0.12;
+  animation: tmp-float 9s ease-in-out infinite;
+}
+
+.tmp-spark-1 { top: 10%; right: 8%;  font-size: 32px; animation-delay: 0s; }
+.tmp-spark-2 { bottom: 15%; left: 6%; font-size: 18px; animation-delay: 3s; }
+.tmp-spark-3 { top: 60%; right: 5%;  font-size: 12px; animation-delay: 6s; }
+
+@keyframes tmp-float {
+  0%, 100% { transform: translateY(0) rotate(0deg);   opacity: 0.12; }
+  50%       { transform: translateY(-14px) rotate(22deg); opacity: 0.25; }
+}
+
+/* ── Light mode ── */
+body.site-light .tmp-page {
+  background:
+    radial-gradient(ellipse at 15% 25%, #c4186e0d, transparent 50%),
+    radial-gradient(ellipse at 85% 70%, #2a1a4010, transparent 55%);
+}
+
+body.site-light .tmp-pill-relaunch {
+  background: rgba(180, 110, 20, 0.08);
+  border-color: rgba(180, 110, 20, 0.2);
+  color: #9a6010;
+}

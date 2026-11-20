@@ -26,9 +26,7 @@ export const pages: Record<string, {title: string; description: string}> = {
   '/portfolio/': { title: 'MVP Portfolio | What We Build in 9 Days', description: 'Browse 10 ready-to-build MVP templates: AI chatbots, CRMs, booking systems, marketplaces and more. Each ships in 9 days from $999.' },
   '/contact/': { title: 'Contact Us | Discuss Your Project', description: 'Contact Developerz Hub at info@developerzhub.com for web, mobile or software development. Prepare a brief with your goals, stack and timeline.' },
   '/privacy/': { title: 'Privacy Information', description: 'How the Developerz Hub website handles project briefs, email enquiries, fonts and basic site delivery information.' },
-  '/coming-soon/': { title: 'Coming Soon', description: 'Something new is on its way. Be the first to know when it launches.' },
-  '/maintenance/': { title: 'Maintenance', description: 'We\'re making improvements to the site. We\'ll be back shortly.' },
-  '/relaunch/': { title: 'We\'ve Relaunched | Developerz Hub', description: 'Developerz Hub has relaunched — rebuilt to make it easier to scope your project, understand your options, and get started fast.' },
+  '/temp/': { title: 'We\'re Relaunching | Developerz Hub', description: 'Developerz Hub is relaunching. We\'re under maintenance and coming back better — be the first to know when we go live.' },
 } as const;
 export type PagePath = keyof typeof pages;
 export const absoluteUrl = (path: string) => new URL(path, site.url).href;
