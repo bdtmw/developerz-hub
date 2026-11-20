@@ -1,6 +1,3 @@
-'use client';
-import { ServiceSlider } from '@/components/service-slider';
-
 const reviews = [
   { name: 'Derick', country: 'United States', project: 'WordPress development', quote: 'Clean code, fast performance, responsive design, and great communication from start to finish. He understood our requirements immediately, offered smart suggestions, and delivered exactly what we needed—on time and without shortcuts.' },
   { name: 'Zachary', country: 'Canada', project: 'Corporate website development', quote: 'He quickly understood our needs and delivered high-quality work that exceeded expectations. Communication was clear throughout the process, and he handled revisions promptly and professionally.' },
@@ -14,7 +11,7 @@ const reviews = [
 
 function ReviewCard({ review }: { review: typeof reviews[number] }) {
   return (
-    <figure className="client-review cr-slide">
+    <figure className="client-review">
       <div className="client-review-top">
         <span className="client-review-project">{review.project}</span>
         <span className="client-review-rating" aria-label="Rated 5 out of 5">
@@ -40,9 +37,15 @@ export default function ClientReviews() {
         </div>
         <p>From websites to custom applications, clients share what mattered most: clear communication, thoughtful delivery and support along the way.</p>
       </div>
-      <ServiceSlider stepPx={382} label="reviews">
-        {reviews.map(review => <ReviewCard key={review.name} review={review} />)}
-      </ServiceSlider>
+      <div className="reviews-marquee" aria-label="Scrolling client reviews">
+        <div className="reviews-track">
+          {[0, 1].map(group => (
+            <div key={group} className="reviews-group" aria-hidden={group > 0 ? true : undefined}>
+              {reviews.map(review => <ReviewCard key={review.name} review={review} />)}
+            </div>
+          ))}
+        </div>
+      </div>
       <div className="client-reviews-bottom">
         <p>Selected excerpts from individual project reviews. Ratings shown belong to each review.</p>
         <a className="client-reviews-cta" href="/contact/">Let's build your next project <span aria-hidden="true">↗</span></a>
