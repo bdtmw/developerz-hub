@@ -27,6 +27,7 @@ export const pages: Record<string, {title: string; description: string}> = {
   '/contact/': { title: 'Contact Us | Discuss Your Project', description: 'Contact Developerz Hub at info@developerzhub.com for web, mobile or software development. Prepare a brief with your goals, stack and timeline.' },
   '/privacy/': { title: 'Privacy Information', description: 'How the Developerz Hub website handles project briefs, email enquiries, fonts and basic site delivery information.' },
   '/coming-soon/': { title: 'Coming Soon', description: 'Something new is on its way. Be the first to know when it launches.' },
+  '/maintenance/': { title: 'Maintenance', description: 'We\'re making improvements to the site. We\'ll be back shortly.' },
 } as const;
 export type PagePath = keyof typeof pages;
 export const absoluteUrl = (path: string) => new URL(path, site.url).href;
