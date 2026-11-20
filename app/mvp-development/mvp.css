@@ -173,10 +173,133 @@
   min-height: 90px;
 }
 
+/* Step indicator */
+.mvp-qf-steps {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.mvp-qf-step {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  color: var(--muted);
+  flex-shrink: 0;
+}
+
+.mvp-qf-step.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.mvp-qf-step-line {
+  flex: 1;
+  height: 1.5px;
+  background: var(--line);
+  max-width: 32px;
+}
+
+.mvp-qf-step-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-left: auto;
+  text-transform: uppercase;
+}
+
+/* Email row */
+.mvp-qf-email-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.mvp-qf-email-row .mvp-qf-input {
+  flex: 1;
+  min-width: 0;
+}
+
+.mvp-qf-send-btn {
+  flex-shrink: 0;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 7px;
+  padding: 0 14px;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s;
+}
+
+.mvp-qf-send-btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.mvp-qf-verified {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #3dba73;
+  padding: 0 10px;
+  background: color-mix(in srgb, #3dba73 12%, transparent);
+  border-radius: 7px;
+  white-space: nowrap;
+}
+
+/* OTP input */
+.mvp-qf-otp-hint {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.mvp-qf-otp-input {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-align: center;
+}
+
+/* Error */
+.mvp-qf-error {
+  font-size: 13px;
+  color: #e05252;
+  margin: 0;
+  line-height: 1.5;
+}
+
 .mvp-qf-submit {
   width: 100%;
   justify-content: center;
   text-align: center;
+  opacity: 1;
+  transition: opacity 0.15s;
+}
+
+.mvp-qf-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: none;
 }
 
 .mvp-qf-note {
