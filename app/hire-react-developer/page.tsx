@@ -92,8 +92,8 @@ export default function Page() {
 
         <div className="lp-form-col">
           <div className="lp-form-box">
-            <p className="lp-form-title">Get Your Free Quote</p>
-            <p className="lp-form-sub">Tell us what you're building — we'll come back with a scope and estimate.</p>
+            <p className="lp-form-title">Prepare your React hiring brief</p>
+            <p className="lp-form-sub">Describe the work, choose a hiring model to discuss and prepare your enquiry for info@developerzhub.com.</p>
             <LeadForm id="lp-form" />
           </div>
         </div>

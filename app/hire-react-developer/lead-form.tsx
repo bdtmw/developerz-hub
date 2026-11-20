@@ -1,26 +1,12 @@
 'use client';
 import { useState, type FormEvent } from 'react';
 
-const SERVICES = [
-  'React / Next.js application (new build)',
-  'React bug fix or production issue',
-  'Next.js migration or upgrade',
-  'New website (design + build)',
-  'Full-stack application (Node.js / API)',
-  'E-commerce store',
-  'WordPress or WooCommerce site',
-  'Performance audit or Core Web Vitals fix',
+const HIRING_MODELS = [
+  'Help me choose',
+  '$20/hr — focused fixes and production issues',
+  'Fixed quote — complete project, agreed upfront',
   'Dedicated developer — ongoing retainer',
-  'Something else — describe below',
-];
-
-const BUDGETS = [
-  'Under £2,000',
-  '£2,000 – £5,000',
-  '£5,000 – £15,000',
-  '£15,000 – £50,000',
-  '£50,000+',
-  'Not sure yet',
+  'Not sure yet — describe the work below',
 ];
 
 export function LeadForm({ id = 'lp-form' }: { id?: string }) {
@@ -30,12 +16,11 @@ export function LeadForm({ id = 'lp-form' }: { id?: string }) {
     e.preventDefault();
     const f = new FormData(e.currentTarget);
     const brief = [
-      'DEVELOPERZ HUB — PROJECT ENQUIRY',
+      'DEVELOPERZ HUB — REACT HIRING BRIEF',
       '',
       `Name: ${f.get('name')}`,
       `Email: ${f.get('email')}`,
-      `Service: ${f.get('service')}`,
-      `Budget: ${f.get('budget')}`,
+      `Hiring model: ${f.get('service')}`,
       '',
       `Project description:`,
       f.get('description'),
@@ -70,24 +55,18 @@ export function LeadForm({ id = 'lp-form' }: { id?: string }) {
         </label>
       </div>
       <label className="lp-label">
-        What do you need?
+        Hiring model
         <select name="service">
-          {SERVICES.map(s => <option key={s}>{s}</option>)}
+          {HIRING_MODELS.map(s => <option key={s}>{s}</option>)}
         </select>
       </label>
       <label className="lp-label">
-        Rough budget
-        <select name="budget">
-          {BUDGETS.map(b => <option key={b}>{b}</option>)}
-        </select>
-      </label>
-      <label className="lp-label">
-        Tell us about your project <span aria-hidden="true">*</span>
+        Project description <span aria-hidden="true">*</span>
         <textarea name="description" required minLength={20} maxLength={2000}
           placeholder="What are you building, who is it for, and what would make it a success?" rows={4} />
       </label>
-      <button type="submit" className="button lp-form-btn">Get My Free Quote →</button>
-      <p className="lp-form-note">No spam. Your brief opens in your email app — nothing is sent by this website until you hit send.</p>
+      <button type="submit" className="button lp-form-btn">Prepare hiring brief ↗</button>
+      <p className="lp-form-note">Prepared locally. Review the draft in your email app before sending. Do not include passwords or confidential records.</p>
     </form>
   );
 }
