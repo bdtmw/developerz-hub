@@ -8,23 +8,6 @@ export default function Page() {
     <main id="main" className="ph-page">
       <div className="ph-inner">
 
-        <div className="ph-status-row">
-          <span className="ph-pill ph-pill-on">
-            <span className="ph-pill-dot" aria-hidden="true"></span>
-            Coming soon
-          </span>
-          <span className="ph-sep" aria-hidden="true">·</span>
-          <span className="ph-pill ph-pill-on">
-            <span className="ph-pill-dot" aria-hidden="true"></span>
-            Maintenance
-          </span>
-          <span className="ph-sep" aria-hidden="true">·</span>
-          <span className="ph-pill ph-pill-on">
-            <span className="ph-pill-dot" aria-hidden="true"></span>
-            Relaunching
-          </span>
-        </div>
-
         <h1 className="ph-heading">
           We&rsquo;re rebuilding<br /><em>something better.</em>
         </h1>
