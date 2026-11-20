@@ -45,6 +45,39 @@ export default function Home() {
       <div className="creative-copy"><p className="eyebrow">CREATIVE APPROACH</p><h2>The right solutions<br/>for your <em>next big idea.</em></h2><p>Hire a developer by the stack you prefer, or come with just an idea and we’ll help you find the right fit.</p><p>From an individual developer to a complete team, you get exactly what your project needs.</p><Link className="button" href="/hire-developers/">Meet your next developers <span>↗</span></Link></div>
     </section>
     <section id="expertise" className="section editorial-expertise"><div className="editorial-section-title"><p className="eyebrow">WHAT WE DO</p><h2>Your ambition.<br/><em>Our development expertise.</em></h2><p>Choose the right foundation for what comes next.</p></div><ExpertiseCards/></section>
+    <section className="mvp-spotlight">
+      <div className="mvp-spotlight-inner">
+        <div className="mvp-spotlight-left">
+          <p className="eyebrow">MVP DEVELOPMENT</p>
+          <h2>Launch a working product<br/><em>in 9 days.</em></h2>
+          <p className="mvp-spotlight-desc">Fixed scope. Fixed price. You own the code — no lock-in, no surprise invoices. Tell us your idea and we&apos;ll quote it before anything starts.</p>
+          <Link href="/mvp-development/" className="button">See how it works <span>↗</span></Link>
+        </div>
+        <div className="mvp-spotlight-right">
+          <div className="mvp-spot-card">
+            <span className="mvp-spot-num">9</span>
+            <div>
+              <strong>Days to ship</strong>
+              <p>One dedicated developer, full focus on your MVP from day one.</p>
+            </div>
+          </div>
+          <div className="mvp-spot-card">
+            <span className="mvp-spot-num">$999</span>
+            <div>
+              <strong>Starting price</strong>
+              <p>Fixed quote before we start — no change orders, no surprises.</p>
+            </div>
+          </div>
+          <div className="mvp-spot-card">
+            <span className="mvp-spot-num">100%</span>
+            <div>
+              <strong>Code ownership</strong>
+              <p>Full handover on day 9. Take it anywhere, no lock-in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section className="stats-section" aria-labelledby="stats-heading">
       <div className="stats-copy">
         <p className="eyebrow">BY THE NUMBERS</p>

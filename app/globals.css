@@ -108,3 +108,20 @@ body.site-light .cta-section em{color:#ffa2d1}
 body.site-light .cta-section p{color:#f0d8f0}
 body.site-light .cta-section a{color:#ffa2d1}
 body.site-light .cta-spark{color:#ee84c3}
+
+/* ── MVP Spotlight (homepage) ── */
+.mvp-spotlight{position:relative;padding:90px 5.5%;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(135deg,#2a0e1f,#1a0b15 60%);overflow:hidden}
+.mvp-spotlight::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 90% 50%,#f263b018,transparent 60%);pointer-events:none}
+.mvp-spotlight-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.mvp-spotlight-desc{color:var(--muted);font-size:17px;line-height:1.8;margin:22px 0 32px}
+.mvp-spotlight-right{display:flex;flex-direction:column;gap:3px}
+.mvp-spot-card{display:flex;align-items:center;gap:24px;padding:22px 26px;background:rgba(255,255,255,0.03);border:1px solid var(--line);border-radius:6px;transition:border-color .2s}
+.mvp-spot-card:hover{border-color:#f263b040}
+.mvp-spot-num{font-family:'Space Grotesk',Arial,sans-serif;font-size:34px;font-weight:700;color:var(--accent);min-width:76px;letter-spacing:-2px;line-height:1}
+.mvp-spot-card strong{display:block;font-size:15px;font-weight:600;margin-bottom:4px;color:var(--ink)}
+.mvp-spot-card p{font-size:13px;color:var(--muted);margin:0;line-height:1.6}
+@media(max-width:1000px){.mvp-spotlight-inner{grid-template-columns:1fr;gap:50px}}
+@media(max-width:760px){.mvp-spotlight{padding:65px 6%}.mvp-spotlight-desc{font-size:15px}.mvp-spot-num{font-size:28px;min-width:64px}}
+body.site-light .mvp-spotlight{background:linear-gradient(135deg,#f5e6f0,#f0dcea 60%)}
+body.site-light .mvp-spot-card{background:rgba(255,255,255,0.6);border-color:#e0d5ef}
+body.site-light .mvp-spot-card:hover{border-color:#c4186e60}
