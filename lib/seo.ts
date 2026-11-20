@@ -23,6 +23,7 @@ export const pages: Record<string, {title: string; description: string}> = {
   '/about/': { title: 'About Us & Our Development Approach', description: 'Learn how Developerz Hub approaches web, mobile and software projects, from defining requirements to reviewing deliverables and planning the handover.' },
   '/ai-receptionist/': { title: 'AI Receptionist for Small Business', description: 'AI receptionist setup for small businesses. Plan phone answering, lead capture, appointment booking and integrations with Developerz Hub. Request a quote.' },
   '/mvp-development/': { title: 'MVP Development in 9 Days | Starting at $999', description: 'Launch a focused, working MVP in 9 days. Fixed scope, dedicated developer, one fixed price starting at $999. See if your idea qualifies.' },
+  '/portfolio/': { title: 'MVP Portfolio | What We Build in 9 Days', description: 'Browse 10 ready-to-build MVP templates: AI chatbots, CRMs, booking systems, marketplaces and more. Each ships in 9 days from $999.' },
   '/contact/': { title: 'Contact Us | Discuss Your Project', description: 'Contact Developerz Hub at info@developerzhub.com for web, mobile or software development. Prepare a brief with your goals, stack and timeline.' },
   '/privacy/': { title: 'Privacy Information', description: 'How the Developerz Hub website handles project briefs, email enquiries, fonts and basic site delivery information.' },
 } as const;

@@ -1,0 +1,291 @@
+/* ── Portfolio Page ── */
+
+/* Hero */
+.pf-hero {
+  padding: 90px 5.5% 60px;
+  max-width: 760px;
+}
+
+.pf-h1 {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: clamp(50px, 6vw, 88px);
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -0.055em;
+  color: var(--ink);
+  margin: 20px 0 26px;
+}
+
+.pf-h1 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.pf-sub {
+  font-size: 18px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 36px;
+}
+
+.pf-hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.text-link {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--ink);
+  text-decoration: none;
+  letter-spacing: -0.01em;
+  transition: color 0.15s;
+}
+
+.text-link:hover {
+  color: var(--accent);
+}
+
+/* Category legend */
+.pf-legend {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+}
+
+/* Tags */
+.pf-tag {
+  display: inline-block;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 4px;
+  line-height: 1.6;
+}
+
+.tag-ai {
+  background: color-mix(in srgb, #f263b0 15%, transparent);
+  color: #f263b0;
+}
+
+.tag-crm {
+  background: color-mix(in srgb, #63b4f2 15%, transparent);
+  color: #63b4f2;
+}
+
+.tag-platform {
+  background: color-mix(in srgb, #63f2a0 15%, transparent);
+  color: #3dba73;
+}
+
+.tag-marketplace {
+  background: color-mix(in srgb, #f2a063 15%, transparent);
+  color: #d4813a;
+}
+
+/* Grid */
+.pf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 0 5.5%;
+}
+
+/* Cards */
+.pf-card {
+  background: var(--panel);
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pf-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pf-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pf-num {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.pf-icon {
+  font-size: 24px;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.pf-card-title {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.pf-card-desc {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 20px;
+}
+
+/* Features list */
+.pf-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  flex: 1;
+}
+
+.pf-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink);
+}
+
+.pf-features li span {
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Footer */
+.pf-card-footer {
+  margin-top: 20px;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pf-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pf-stack span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  padding: 2px 8px;
+}
+
+.pf-warning {
+  font-size: 11px;
+  color: var(--muted);
+  opacity: 0.7;
+  margin: 0;
+  font-style: italic;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .pf-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .pf-hero {
+    padding: 60px 6% 40px;
+  }
+
+  .pf-h1 {
+    font-size: clamp(44px, 10vw, 68px);
+  }
+
+  .pf-hero-actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .pf-legend {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .pf-grid {
+    grid-template-columns: 1fr;
+    margin: 0 4%;
+  }
+
+  .pf-card {
+    padding: 28px 24px 24px;
+  }
+}
+
+/* ── Light mode ── */
+body.site-light .pf-card {
+  background: #fff;
+}
+
+body.site-light .pf-stack span {
+  background: #f4f4f6;
+  border-color: #e0e0e6;
+}
+
+body.site-light .tag-ai {
+  background: color-mix(in srgb, #c4186e 12%, transparent);
+  color: #c4186e;
+}
+
+body.site-light .tag-crm {
+  background: color-mix(in srgb, #1870c4 12%, transparent);
+  color: #1870c4;
+}
+
+body.site-light .tag-platform {
+  background: color-mix(in srgb, #1a9458 12%, transparent);
+  color: #1a9458;
+}
+
+body.site-light .tag-marketplace {
+  background: color-mix(in srgb, #c47018 12%, transparent);
+  color: #c47018;
+}
