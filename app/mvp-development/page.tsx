@@ -152,6 +152,53 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ── MVP vs Full product ── */}
+      <section className="section mvp-compare" id="compare">
+        <div className="mvp-section-head">
+          <p className="eyebrow">WHICH PATH IS RIGHT FOR YOU</p>
+          <h2>MVP or full product.<br /><em>Choose your path.</em></h2>
+        </div>
+        <div className="mvp-compare-grid">
+          <div className="mvp-compare-card mvp-compare-featured">
+            <div className="mvp-compare-top">
+              <span className="mvp-compare-badge">Most popular</span>
+              <h3>MVP</h3>
+              <p className="mvp-compare-price">From <strong>$999</strong></p>
+              <p className="mvp-compare-tagline">Ship fast. Validate your idea. Own the code.</p>
+            </div>
+            <ul className="mvp-compare-list">
+              <li><span aria-hidden="true">✓</span>One core user flow, fully built</li>
+              <li><span aria-hidden="true">✓</span>Fixed scope — agreed before we start</li>
+              <li><span aria-hidden="true">✓</span>9-day delivery, one dedicated developer</li>
+              <li><span aria-hidden="true">✓</span>Live deployment on your domain</li>
+              <li><span aria-hidden="true">✓</span>Full code ownership, no lock-in</li>
+              <li><span aria-hidden="true">✓</span>7-day post-launch support</li>
+            </ul>
+            <p className="mvp-compare-when"><strong>Best for:</strong> validating a new idea, landing early customers, raising a seed round with a live product.</p>
+            <Link href="/contact/" className="button mvp-compare-cta">Get a quote <span aria-hidden="true">↗</span></Link>
+          </div>
+          <div className="mvp-compare-card">
+            <div className="mvp-compare-top">
+              <span className="mvp-compare-badge outline">After your MVP, or from scratch</span>
+              <h3>Full product</h3>
+              <p className="mvp-compare-price"><strong>Quote on request</strong></p>
+              <p className="mvp-compare-tagline">Multiple phases. Custom scope. Fixed price per phase.</p>
+            </div>
+            <ul className="mvp-compare-list">
+              <li><span aria-hidden="true">✓</span>Multi-feature build, your full vision</li>
+              <li><span aria-hidden="true">✓</span>Scoped in phases — each phase is fixed price</li>
+              <li><span aria-hidden="true">✓</span>Dedicated team, not a single developer</li>
+              <li><span aria-hidden="true">✓</span>Custom timeline agreed up front</li>
+              <li><span aria-hidden="true">✓</span>Full code ownership, no lock-in</li>
+              <li><span aria-hidden="true">✓</span>Ongoing support between phases</li>
+            </ul>
+            <p className="mvp-compare-when"><strong>Best for:</strong> post-MVP growth, replacing legacy systems, building a product that needs more than one core flow.</p>
+            <Link href="/contact/" className="button mvp-compare-cta">Start a conversation <span aria-hidden="true">↗</span></Link>
+          </div>
+        </div>
+        <p className="mvp-compare-note">Not sure which fits? <Link href="/contact/" className="text-link">Tell us your idea <span aria-hidden="true">→</span></Link> and we'll recommend the right scope.</p>
+      </section>
+
       {/* ── Pricing ── */}
       <section className="section mvp-pricing" id="pricing">
         <div className="mvp-pricing-card">

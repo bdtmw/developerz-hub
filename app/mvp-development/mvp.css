@@ -864,6 +864,139 @@ body.site-light .mvp-qf-divider {
   }
 }
 
+/* ── MVP vs Full product comparison ── */
+.mvp-compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.mvp-compare-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 36px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.mvp-compare-card.mvp-compare-featured {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 5%, var(--panel));
+}
+
+.mvp-compare-top {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mvp-compare-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: #fff;
+  align-self: flex-start;
+}
+
+.mvp-compare-badge.outline {
+  background: transparent;
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+.mvp-compare-card h3 {
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  margin: 0;
+}
+
+.mvp-compare-price {
+  font-size: 15px;
+  color: var(--muted);
+  margin: 0;
+}
+
+.mvp-compare-price strong {
+  color: var(--ink);
+  font-size: 22px;
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  letter-spacing: -0.04em;
+}
+
+.mvp-compare-tagline {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.mvp-compare-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mvp-compare-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.mvp-compare-list li span {
+  color: var(--accent);
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.mvp-compare-when {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.mvp-compare-when strong {
+  color: var(--ink);
+}
+
+.mvp-compare-cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+.mvp-compare-note {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 28px 0 0;
+  text-align: center;
+}
+
+.mvp-compare-note .text-link {
+  font-size: 14px;
+}
+
+@media (max-width: 860px) {
+  .mvp-compare-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ── Light mode ── */
 body.site-light .mvp-hero {
   background:
@@ -884,6 +1017,18 @@ body.site-light .mvp-pf-tag-marketplace { background: color-mix(in srgb, #c47018
 body.site-light .mvp-pricing-right {
   background: color-mix(in srgb, #c4186e 6%, #fff);
   border-color: color-mix(in srgb, #c4186e 20%, transparent);
+}
+body.site-light .mvp-compare-card {
+  background: #fff;
+  border-color: #e0d5ef;
+}
+body.site-light .mvp-compare-card.mvp-compare-featured {
+  border-color: #c4186e;
+  background: color-mix(in srgb, #c4186e 4%, #fff);
+}
+body.site-light .mvp-compare-badge.outline {
+  border-color: #d0c0de;
+  color: #7a5a8a;
 }
 body.site-light .mvp-day-badge {
   box-shadow: 0 6px 36px color-mix(in srgb, #c4186e 30%, transparent);
