@@ -10,10 +10,17 @@
     radial-gradient(ellipse at -10% 100%, #4a107830, transparent 55%);
 }
 
-.mvp-hero-inner {
+.mvp-hero-cols {
   position: relative;
   z-index: 2;
-  max-width: 760px;
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 60px;
+  align-items: center;
+}
+
+.mvp-hero-left {
+  max-width: 600px;
 }
 
 .mvp-h1 {
@@ -103,6 +110,84 @@
   letter-spacing: 0.08em;
   color: var(--muted);
   margin: 0;
+}
+
+/* Qualify form card */
+.mvp-qualify-form {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 36px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.mvp-qf-heading {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+  margin: 0 0 4px;
+}
+
+.mvp-qf-label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.mvp-qf-input,
+.mvp-qf-textarea {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  padding: 10px 13px;
+  font-size: 14px;
+  color: var(--ink);
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.mvp-qf-input::placeholder,
+.mvp-qf-textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.6;
+}
+
+.mvp-qf-input:focus,
+.mvp-qf-textarea:focus {
+  border-color: var(--accent);
+}
+
+.mvp-qf-textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.mvp-qf-submit {
+  width: 100%;
+  justify-content: center;
+  text-align: center;
+}
+
+.mvp-qf-note {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.mvp-qf-note a {
+  color: var(--accent);
 }
 
 /* Section header */
@@ -454,6 +539,16 @@
 }
 
 /* ── Responsive ── */
+@media (max-width: 1100px) {
+  .mvp-hero-cols {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .mvp-hero-left {
+    max-width: 100%;
+  }
+}
+
 @media (max-width: 1000px) {
   .mvp-phases,
   .mvp-included-grid,
@@ -531,4 +626,18 @@ body.site-light .mvp-pricing-right {
 }
 body.site-light .mvp-day-badge {
   box-shadow: 0 6px 36px color-mix(in srgb, #c4186e 30%, transparent);
+}
+body.site-light .mvp-qualify-form {
+  background: #fff;
+  border-color: #e0e0e6;
+}
+body.site-light .mvp-qf-input,
+body.site-light .mvp-qf-textarea {
+  background: #f4f4f6;
+  border-color: #e0e0e6;
+  color: #1a1a2e;
+}
+body.site-light .mvp-qf-input:focus,
+body.site-light .mvp-qf-textarea:focus {
+  border-color: #c4186e;
 }

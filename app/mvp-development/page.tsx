@@ -1,6 +1,7 @@
 import './mvp.css';
 import Link from 'next/link';
 import { pageMetadata } from '@/lib/seo';
+import MvpQualifyForm from './MvpQualifyForm';
 export const metadata = pageMetadata('/mvp-development/');
 
 const phases = [
@@ -61,24 +62,26 @@ export default function Page() {
 
       {/* ── Hero ── */}
       <section className="mvp-hero">
-        <div className="mvp-hero-inner">
-          <p className="eyebrow">MVP DEVELOPMENT</p>
-          <h1 className="mvp-h1">
-            Your App Idea<br />
-            Doesn't Need a<br />
-            <span className="mvp-strike">$10,000</span> Budget.
-          </h1>
-          <p className="mvp-sub">
-            Launch a focused, working MVP in 9 days. Fixed scope. One fixed price. You own the code.
-          </p>
-          <div className="mvp-offer-row">
-            <div className="mvp-day-badge">9 Days</div>
-            <div className="mvp-divider" aria-hidden="true">·</div>
-            <div className="mvp-price-badge">From $999</div>
-          </div>
-          <div className="mvp-hero-actions">
-            <Link href="/contact/" className="button">See If Your Idea Qualifies <span aria-hidden="true">↗</span></Link>
+        <div className="mvp-hero-cols">
+          <div className="mvp-hero-left">
+            <p className="eyebrow">MVP DEVELOPMENT</p>
+            <h1 className="mvp-h1">
+              Your App Idea<br />
+              Doesn't Need a<br />
+              <span className="mvp-strike">$10,000</span> Budget.
+            </h1>
+            <p className="mvp-sub">
+              Launch a focused, working MVP in 9 days. Fixed scope. One fixed price. You own the code.
+            </p>
+            <div className="mvp-offer-row">
+              <div className="mvp-day-badge">9 Days</div>
+              <div className="mvp-divider" aria-hidden="true">·</div>
+              <div className="mvp-price-badge">From $999</div>
+            </div>
             <p className="mvp-trust">50+ developers · 1,000+ projects delivered</p>
+          </div>
+          <div className="mvp-hero-right">
+            <MvpQualifyForm />
           </div>
         </div>
       </section>
