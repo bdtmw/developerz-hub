@@ -396,6 +396,28 @@
   text-align: center;
 }
 
+/* Select */
+.mvp-qf-select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7' viewBox='0 0 12 7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* Divider between brief and identity fields */
+.mvp-qf-divider {
+  height: 1px;
+  background: var(--panel-border, rgba(255,255,255,0.08));
+  margin: 4px 0 2px;
+}
+
+body.site-light .mvp-qf-divider {
+  background: rgba(0,0,0,0.1);
+}
+
 /* Error */
 .mvp-qf-error {
   font-size: 13px;

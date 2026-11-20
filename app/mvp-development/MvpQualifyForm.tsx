@@ -5,25 +5,29 @@ type OtpState = 'idle' | 'sending' | 'sent' | 'verifying' | 'verified';
 type ProductType = 'mvp' | 'full' | null;
 
 export default function MvpQualifyForm() {
-  // Step 1 state
-  const [step, setStep] = useState<1 | 2>(1);
-  const [idea, setIdea] = useState('');
+  // Brief fields
+  const [what, setWhat] = useState('');
+  const [who, setWho] = useState('');
+  const [core, setCore] = useState('');
+  const [timing, setTiming] = useState('');
+  // Identity
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
+  // OTP
   const [otp, setOtp] = useState('');
   const [token, setToken] = useState('');
   const [otpState, setOtpState] = useState<OtpState>('idle');
   const [error, setError] = useState('');
   const otpRef = useRef<HTMLInputElement>(null);
-
-  // Step 2 state
+  // Steps
+  const [step, setStep] = useState<1 | 2>(1);
   const [productType, setProductType] = useState<ProductType>(null);
   const [submitted, setSubmitted] = useState(false);
 
   /* ── OTP ── */
   async function sendCode() {
     setError('');
-    if (!email || !email.includes('@')) { setError('Enter a valid email first.'); return; }
+    if (!email.includes('@')) { setError('Enter a valid email first.'); return; }
     setOtpState('sending');
     try {
       const res = await fetch('/api/mvp-otp/send', {
@@ -73,7 +77,7 @@ export default function MvpQualifyForm() {
     if (val.length === 6) verifyCode(val);
   }
 
-  /* ── Navigation ── */
+  /* ── Steps ── */
   function goToStep2(e: FormEvent) {
     e.preventDefault();
     setStep(2);
@@ -82,16 +86,36 @@ export default function MvpQualifyForm() {
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
     if (!productType) return;
-    const typeLabel = productType === 'mvp' ? 'MVP (9-day, fixed scope)' : 'Full product (custom scope)';
-    const body = `MVP DEVELOPMENT ENQUIRY\n\nName: ${name}\nEmail: ${email} (verified)\n\nIdea:\n${idea}\n\nBuilding: ${typeLabel}`;
-    const href = `mailto:info@developerzhub.com?subject=${encodeURIComponent('MVP Enquiry — ' + name)}&body=${encodeURIComponent(body)}`;
+    const typeLabel = productType === 'mvp'
+      ? 'MVP (9-day, fixed scope, from $999)'
+      : 'Full product (custom scope, quote on request)';
+    const body = [
+      'MVP DEVELOPMENT BRIEF — DEVELOPERZ HUB',
+      '',
+      `Name: ${name}`,
+      `Email: ${email} (verified)`,
+      '',
+      'WHAT ARE YOU BUILDING?',
+      what,
+      '',
+      'WHO IS IT FOR?',
+      who,
+      '',
+      'CORE FEATURE / DAY-ONE MUST-HAVE',
+      core,
+      '',
+      `WHEN DO YOU NEED TO LAUNCH: ${timing || 'Not specified'}`,
+      '',
+      `BUILDING: ${typeLabel}`,
+    ].join('\n');
+    const href = `mailto:info@developerzhub.com?subject=${encodeURIComponent('MVP Brief — ' + name)}&body=${encodeURIComponent(body)}`;
     window.location.href = href;
     setSubmitted(true);
   }
 
   /* ── Guards ── */
-  const canSend = email.includes('@') && otpState === 'idle';
-  const canContinue = otpState === 'verified' && idea.trim().length >= 10 && name.trim().length >= 2;
+  const briefReady = what.trim().length >= 15 && who.trim().length >= 3 && core.trim().length >= 10;
+  const canContinue = briefReady && otpState === 'verified' && name.trim().length >= 2;
 
   return (
     <form className="mvp-qualify-form" onSubmit={step === 1 ? goToStep2 : handleSubmit} noValidate>
@@ -106,23 +130,67 @@ export default function MvpQualifyForm() {
         <span className="mvp-qf-step-label">Step {step} of 2</span>
       </div>
 
-      {/* ── STEP 1 ── */}
+      {/* ── STEP 1 — The brief ── */}
       {step === 1 && <>
-        <p className="mvp-qf-heading">Tell us your idea</p>
+        <p className="mvp-qf-heading">Your project brief</p>
 
         <label className="mvp-qf-label">
-          What do you want to build?
+          What are you building?
           <textarea
             className="mvp-qf-textarea"
-            rows={3}
+            rows={2}
             required
-            minLength={10}
-            maxLength={1000}
-            value={idea}
-            onChange={e => setIdea(e.target.value)}
-            placeholder="Describe in a sentence or two — what it does and who it's for."
+            minLength={15}
+            maxLength={800}
+            value={what}
+            onChange={e => setWhat(e.target.value)}
+            placeholder="Describe the product — what it is and what problem it solves."
           />
         </label>
+
+        <label className="mvp-qf-label">
+          Who is it for?
+          <input
+            className="mvp-qf-input"
+            type="text"
+            required
+            maxLength={200}
+            value={who}
+            onChange={e => setWho(e.target.value)}
+            placeholder="e.g. small business owners, freelancers, HR teams…"
+          />
+        </label>
+
+        <label className="mvp-qf-label">
+          What must it do on day one?
+          <textarea
+            className="mvp-qf-textarea"
+            rows={2}
+            required
+            minLength={10}
+            maxLength={800}
+            value={core}
+            onChange={e => setCore(e.target.value)}
+            placeholder="The single most important action a user needs to complete."
+          />
+        </label>
+
+        <label className="mvp-qf-label">
+          When do you need to launch?
+          <select
+            className="mvp-qf-input mvp-qf-select"
+            value={timing}
+            onChange={e => setTiming(e.target.value)}
+          >
+            <option value="">— Select —</option>
+            <option value="Just exploring">Just exploring</option>
+            <option value="Within a month">Within a month</option>
+            <option value="1–3 months">1–3 months</option>
+            <option value="I have a specific deadline">I have a specific deadline</option>
+          </select>
+        </label>
+
+        <div className="mvp-qf-divider" aria-hidden="true" />
 
         <label className="mvp-qf-label">
           Your name
@@ -148,12 +216,20 @@ export default function MvpQualifyForm() {
               maxLength={200}
               autoComplete="email"
               value={email}
-              onChange={e => { setEmail(e.target.value); if (otpState !== 'idle') { setOtpState('idle'); setOtp(''); setToken(''); } }}
+              onChange={e => {
+                setEmail(e.target.value);
+                if (otpState !== 'idle') { setOtpState('idle'); setOtp(''); setToken(''); }
+              }}
               placeholder="alex@company.com"
               disabled={otpState === 'verified'}
             />
             {otpState !== 'verified' && (
-              <button type="button" className="mvp-qf-send-btn" onClick={sendCode} disabled={!email.includes('@') || otpState !== 'idle'}>
+              <button
+                type="button"
+                className="mvp-qf-send-btn"
+                onClick={sendCode}
+                disabled={!email.includes('@') || otpState !== 'idle'}
+              >
                 {otpState === 'sending' ? '…' : 'Send code'}
               </button>
             )}
@@ -191,7 +267,7 @@ export default function MvpQualifyForm() {
         <p className="mvp-qf-note">Free scope call · Response within 24 h</p>
       </>}
 
-      {/* ── STEP 2 ── */}
+      {/* ── STEP 2 — MVP or full product ── */}
       {step === 2 && <>
         <p className="mvp-qf-heading">MVP or full product?</p>
         <p className="mvp-qf-sub">We scope both — pick the one that fits where you are.</p>
@@ -229,8 +305,6 @@ export default function MvpQualifyForm() {
             </div>
           </label>
         </div>
-
-        {error && <p className="mvp-qf-error" role="alert">{error}</p>}
 
         {submitted ? (
           <p className="mvp-qf-note" role="status">
