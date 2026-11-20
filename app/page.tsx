@@ -17,15 +17,15 @@ const certifications = [
   { name: 'Google', role: 'Certified Project Manager', color: '#4285F4', label: 'Google Certified Project Management', img: '/google-g.png', mark: '' },
 ];
 const startSteps = ['Tell your story', 'Make it concrete', 'Review and send'];
-const specialties = ['Web development', 'WordPress', 'Full-stack', 'Mobile apps', 'Cloud & APIs', 'AI applications'];
+const specialties = ['MVP development', 'Web development', 'WordPress', 'Full-stack', 'Mobile apps', 'Cloud & APIs', 'AI applications'];
 export default function Home() {
   return <main id="main" className="template-home">
     <section className="editorial-hero">
       <CodeScreen/>
       <div className="editorial-headline">
-        <p className="eyebrow">WEB &amp; SOFTWARE DEVELOPMENT SERVICES</p>
+        <p className="eyebrow">MVP &amp; SOFTWARE DEVELOPMENT SERVICES</p>
         <h1>Web development.<br/><em>Extraordinary possibilities.</em></h1>
-        <p>Hire developers across web, mobile and software stacks<br className="desktop-break"/> to build your next digital product.</p>
+        <p>Build your MVP or hire developers across web, mobile and software stacks<br className="desktop-break"/> to launch your next digital product.</p>
         <Link href="/contact/" className="button">Start your project <span>↗</span></Link>
       </div>
       <div className="hero-composition">

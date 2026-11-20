@@ -12,7 +12,7 @@ export const site = {
 export const pages: Record<string, {title: string; description: string}> = {
   ...Object.fromEntries(stackPages.map(s => [stackPath(s.slug), {title: `Hire ${s.name} Developers`, description: s.summary}])),
   ...Object.fromEntries(hiringGuides.map(g => [`/guides/${g.slug}/`, {title:g.title,description:g.intro}])),
-  '/': { title: 'Web & Software Development Services', description: 'Build with Developerz Hub across web, mobile, backend, ecommerce and specialist development stacks. Explore services and practical developer hiring guides.' },
+  '/': { title: 'MVP Development Services | Web & App Development Company', description: 'MVP development services for startups and teams. Build your MVP app, web platform or software product with Developerz Hub — 50+ developers across web, mobile, backend and AI stacks.' },
   '/hire-developers/': { title: 'Hire Developers for Websites & Applications', description: 'Hire developers across web, mobile, backend, ecommerce and specialist stacks. Compare services and plan your project with Developerz Hub.' },
   '/hire-web-developers/': { title: 'Hire a Web Developer | Websites & Web Apps', description: 'Hire a web developer for responsive websites and custom web applications. Explore Next.js, React, integrations, project scoping and delivery at Developerz Hub.' },
   '/hire-wordpress-developers/': { title: 'Hire a WordPress Developer | Custom Websites', description: 'Hire a WordPress developer for custom themes, content workflows, WooCommerce and website improvements. Plan your WordPress project with Developerz Hub.' },
