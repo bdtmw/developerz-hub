@@ -153,7 +153,7 @@ export default function MvpQualifyForm() {
               disabled={otpState === 'verified'}
             />
             {otpState !== 'verified' && (
-              <button type="button" className="mvp-qf-send-btn" onClick={sendCode} disabled={!canSend || otpState === 'sending'}>
+              <button type="button" className="mvp-qf-send-btn" onClick={sendCode} disabled={!email.includes('@') || otpState !== 'idle'}>
                 {otpState === 'sending' ? '…' : 'Send code'}
               </button>
             )}

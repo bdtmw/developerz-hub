@@ -1,7 +1,6 @@
 import { createHmac, randomInt } from 'crypto';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
 const SECRET = process.env.OTP_SECRET ?? 'dev-secret-change-in-prod';
 
 export async function POST(req: Request) {
@@ -9,6 +8,11 @@ export async function POST(req: Request) {
   if (!email || typeof email !== 'string' || !email.includes('@')) {
     return Response.json({ error: 'Valid email required' }, { status: 400 });
   }
+
+  if (!process.env.RESEND_API_KEY) {
+    return Response.json({ error: 'Email service not configured' }, { status: 503 });
+  }
+  const resend = new Resend(process.env.RESEND_API_KEY);
 
   const otp = String(randomInt(100000, 999999));
   const ts = Date.now();
