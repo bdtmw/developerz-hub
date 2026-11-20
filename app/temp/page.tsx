@@ -8,22 +8,41 @@ export default function Page() {
     <main id="main" className="ph-page">
       <div className="ph-inner">
 
+        <div className="ph-badge">
+          <span className="ph-badge-dot" aria-hidden="true"></span>
+          Early bird offer — limited spots
+        </div>
+
         <h1 className="ph-heading">
-          We&rsquo;re rebuilding<br /><em>something better.</em>
+          Get 50% off<br /><em>your first project.</em>
         </h1>
 
         <p className="ph-body">
-          Developerz Hub is undergoing a full relaunch. We&rsquo;ll be back
-          shortly with a faster site, sharper services, and a better way
-          to start your project.
+          Developerz Hub is relaunching. To celebrate, the first clients
+          through the door get 50% off their project — React, Next.js,
+          WordPress, mobile or backend. Lock in the rate before we go fully live.
         </p>
 
+        <div className="ph-discount-card">
+          <div className="ph-discount-left">
+            <span className="ph-discount-pct">50<span>%</span></span>
+            <span className="ph-discount-label">off your first project</span>
+          </div>
+          <div className="ph-discount-divider" aria-hidden="true"></div>
+          <ul className="ph-discount-perks">
+            <li><span aria-hidden="true">✓</span> Any stack, any project size</li>
+            <li><span aria-hidden="true">✓</span> Fixed scope, fixed price</li>
+            <li><span aria-hidden="true">✓</span> Full code ownership</li>
+            <li><span aria-hidden="true">✓</span> Limited to early clients only</li>
+          </ul>
+        </div>
+
         <Link href="/contact/" className="button ph-cta">
-          Get notified when we&rsquo;re live <span aria-hidden="true">↗</span>
+          Claim early bird access <span aria-hidden="true">↗</span>
         </Link>
 
         <p className="ph-note">
-          Or reach us at{' '}
+          Or email us directly at{' '}
           <a href="mailto:info@developerzhub.com">info@developerzhub.com</a>
         </p>
 

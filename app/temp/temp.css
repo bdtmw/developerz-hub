@@ -76,6 +76,127 @@
   50%       { opacity: 0.3; }
 }
 
+/* ── Badge ── */
+.ph-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.ph-badge-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: ph-dot 2s ease-in-out infinite;
+}
+
+/* ── Discount card ── */
+.ph-discount-card {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  background: color-mix(in srgb, var(--accent) 6%, var(--panel));
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+  border-radius: 14px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 480px;
+  text-align: left;
+}
+
+.ph-discount-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 28px 32px;
+  gap: 4px;
+  flex-shrink: 0;
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.ph-discount-pct {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+}
+
+.ph-discount-pct span {
+  font-size: 36px;
+}
+
+.ph-discount-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  opacity: 0.75;
+  text-align: center;
+  max-width: 80px;
+  line-height: 1.4;
+}
+
+.ph-discount-divider {
+  width: 1px;
+  background: color-mix(in srgb, var(--accent) 20%, transparent);
+  flex-shrink: 0;
+}
+
+.ph-discount-perks {
+  list-style: none;
+  margin: 0;
+  padding: 24px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: center;
+}
+
+.ph-discount-perks li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--fg);
+}
+
+.ph-discount-perks li span {
+  color: var(--accent);
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .ph-discount-card { flex-direction: column; }
+  .ph-discount-divider { width: 100%; height: 1px; }
+  .ph-discount-left { flex-direction: row; gap: 16px; padding: 20px 24px; }
+  .ph-discount-label { text-align: left; max-width: none; }
+}
+
+/* Light mode */
+body.site-light .ph-badge {
+  background: color-mix(in srgb, var(--accent) 8%, #fff);
+}
+
+body.site-light .ph-discount-card {
+  background: color-mix(in srgb, var(--accent) 4%, #fff);
+}
+
 /* ── Heading ── */
 .ph-heading {
   font-family: 'Space Grotesk', Arial, sans-serif;
