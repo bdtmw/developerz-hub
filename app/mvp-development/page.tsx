@@ -39,6 +39,15 @@ const reviews = [
   { name: 'Zachary', country: 'Canada', project: 'Corporate website development', quote: 'He quickly understood our needs and delivered high-quality work that exceeded expectations. Communication was clear throughout the process, and he handled revisions promptly and professionally.' },
 ];
 
+const portfolio = [
+  { tag: 'AI', icon: '💬', title: 'AI Customer Support Chatbot', desc: 'Embeddable chatbot grounded in your knowledge base. Captures leads when it can\'t answer.' },
+  { tag: 'CRM', icon: '📊', title: 'AI Lead Qualification CRM', desc: 'Capture, score, and follow up with leads automatically. Pipeline stages included.' },
+  { tag: 'Platform', icon: '📅', title: 'Appointment Booking System', desc: 'Public booking page with conflict prevention, reminders, and admin calendar.' },
+  { tag: 'AI', icon: '🧠', title: 'AI Knowledge-Base Assistant', desc: 'Private team assistant. Upload docs, ask questions, get answers with references.' },
+  { tag: 'Platform', icon: '🚀', title: 'Client Onboarding Portal', desc: 'Invite clients, assign checklists, receive documents, track progress in one portal.' },
+  { tag: 'Marketplace', icon: '🛍️', title: 'Niche Marketplace MVP', desc: 'Sellers post listings, buyers browse and inquire. Category filters and moderation.' },
+];
+
 const faqs = [
   { q: 'What counts as an MVP?', a: 'A focused product with one core user flow that works end-to-end. Think: users can sign up, complete the main action (book, buy, submit, generate), and you can see it happen. No admin dashboards, no advanced settings — just the thing that proves your idea.' },
   { q: 'What if my idea is too complex for 9 days?', a: 'We\'ll tell you upfront. After the first scoping conversation, if 9 days isn\'t realistic we quote a larger fixed project instead. No wasted time on either side.' },
@@ -113,6 +122,30 @@ export default function Page() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* ── Portfolio preview ── */}
+      <section className="section mvp-portfolio">
+        <div className="mvp-section-head">
+          <p className="eyebrow">WHAT WE BUILD</p>
+          <h2>Ready-to-build templates.<br /><em>Or bring your own idea.</em></h2>
+        </div>
+        <div className="mvp-portfolio-grid">
+          {portfolio.map(p => (
+            <div key={p.title} className="mvp-pf-card">
+              <div className="mvp-pf-card-top">
+                <span className={`mvp-pf-tag mvp-pf-tag-${p.tag.toLowerCase()}`}>{p.tag}</span>
+                <span className="mvp-pf-icon" aria-hidden="true">{p.icon}</span>
+              </div>
+              <h3 className="mvp-pf-title">{p.title}</h3>
+              <p className="mvp-pf-desc">{p.desc}</p>
+            </div>
+          ))}
+        </div>
+        <div className="mvp-portfolio-footer">
+          <p className="mvp-pf-note">These are 6 of 10 ready-to-build templates. Each ships in 9 days.</p>
+          <Link href="/portfolio/" className="text-link">Browse all 10 templates <span aria-hidden="true">→</span></Link>
         </div>
       </section>
 
