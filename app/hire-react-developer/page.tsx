@@ -21,12 +21,12 @@ const TICKER = [
 ];
 
 const PROBLEMS = [
-  { n: '01', title: 'New website build', desc: 'Brand identity, design system, marketing pages and CMS. Launch-ready from day one.' },
-  { n: '02', title: 'React / Next.js app', desc: 'SPAs, SSR apps, dashboards and customer portals. Modern stack, clean architecture.' },
-  { n: '03', title: 'WordPress or WooCommerce', desc: 'CMS builds, theme development, plugin customisation and e-commerce setup.' },
-  { n: '04', title: 'E-commerce platform', desc: 'Shopify, WooCommerce or bespoke checkout. Product catalogue, payments and fulfilment.' },
-  { n: '05', title: 'Backend API or service', desc: 'Node.js, Laravel, Python microservices and third-party API integrations.' },
-  { n: '06', title: 'Performance & Core Web Vitals', desc: 'Speed audit, bundle optimisation, LCP/CLS improvements and pagespeed recovery.' },
+  { n: '01', title: 'React component library', desc: 'Reusable, typed component systems built with React and TypeScript. Designed for maintainability and easy handover.' },
+  { n: '02', title: 'Next.js app or migration', desc: 'New Next.js builds and App Router migrations. SSR, SSG, server components, and edge-ready architecture.' },
+  { n: '03', title: 'React dashboard or portal', desc: 'Admin panels, client portals and data dashboards. Real-time updates, role-based access and clean UI.' },
+  { n: '04', title: 'TanStack Query integration', desc: 'Server-state management, caching, mutations and query invalidation. Keep lists and views fresh automatically.' },
+  { n: '05', title: 'React e-commerce storefront', desc: 'Product discovery, cart, checkout and payments. Headless Shopify, WooCommerce or custom checkout flows.' },
+  { n: '06', title: 'Performance & bundle optimisation', desc: 'React profiling, code splitting, lazy loading and Core Web Vitals improvements. Faster load, better scores.' },
 ];
 
 const PROCESS = [
