@@ -306,6 +306,68 @@ export default function Page() {
         </div>
       </section>
 
+      {/* ── Comparison ── */}
+      <section className="lp-compare-section">
+        <div className="lp-section-header">
+          <p className="eyebrow">HOW WE COMPARE</p>
+          <h2>Compare the actual engagement,<br/><em>not just the label.</em></h2>
+          <p className="lp-section-sub">Use the same scope to compare Developerz Hub with an individual marketplace proposal, an in-house role or another agency.</p>
+        </div>
+        <div className="lp-compare-wrap">
+          <table className="lp-compare-table">
+            <thead>
+              <tr>
+                <th>Decision</th>
+                <th className="lp-col-us">Developerz Hub</th>
+                <th>Freelance marketplace</th>
+                <th>In-house hire</th>
+                <th>Other agency</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Time to start</td>
+                <td className="lp-col-us"><strong>1–2 weeks</strong> from brief to build. Same-day start available for fixes.</td>
+                <td>Depends on the selected freelancer's availability</td>
+                <td>Depends on recruitment and onboarding</td>
+                <td>Depends on available capacity and onboarding</td>
+              </tr>
+              <tr>
+                <td>Vetting</td>
+                <td className="lp-col-us"><strong>Pre-vetted from 50+ developers.</strong> A project manager matches the right person to your stack and scope.</td>
+                <td>Review the person's evidence and any platform checks</td>
+                <td>Define an interview and assessment process</td>
+                <td>Ask who assesses the proposed developer</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td className="lp-col-us"><strong>$20/hr</strong> for focused fixes. <strong>Fixed quote</strong> for complete projects — agreed upfront, no surprises.</td>
+                <td>Compare fees, scope and coordination</td>
+                <td>Consider compensation and employment costs</td>
+                <td>Compare the stated scope and fees</td>
+              </tr>
+              <tr>
+                <td>If it does not work out</td>
+                <td className="lp-col-us"><strong>We iterate until it's right.</strong> Staged milestone reviews before final delivery. No lock-in.</td>
+                <td>Check the contract and platform dispute terms</td>
+                <td>Follow the applicable employment arrangement</td>
+                <td>Review the signed remedy and termination terms</td>
+              </tr>
+              <tr>
+                <td>Commitment</td>
+                <td className="lp-col-us"><strong>No minimum term.</strong> Cancel-friendly. Pay per milestone on fixed projects.</td>
+                <td>As agreed with the freelancer</td>
+                <td>Defined by the employment arrangement</td>
+                <td>As defined in the contract</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div className="lp-compare-cta">
+          <a href="#lp-form" className="button">Get a free quote →</a>
+        </div>
+      </section>
+
       {/* ── FAQ ── */}
       <section className="lp-faq-section">
         <div className="lp-faq-inner">

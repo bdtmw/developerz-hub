@@ -272,3 +272,24 @@ body.site-light .lp-bottom-cta{background:radial-gradient(ellipse at 20% 50%,#c4
 body.site-light .lp-bottom-copy h2{color:#1a0d2e}
 body.site-light .lp-bottom-form .lp-form-box{background:#fff;border-color:#ddd5ef}
 body.site-light .lp-link-light{color:#c4186e}
+
+/* ── Comparison table ── */
+.lp-compare-section{padding:90px 5.5%;border-top:1px solid var(--line)}
+.lp-compare-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;border-radius:12px;border:1px solid var(--line)}
+.lp-compare-table{width:100%;border-collapse:collapse;font-size:14px;min-width:700px}
+.lp-compare-table thead tr{background:color-mix(in srgb,var(--accent) 6%,var(--panel))}
+.lp-compare-table th{padding:14px 20px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);border-bottom:1px solid var(--line);white-space:nowrap}
+.lp-compare-table th.lp-col-us{color:var(--accent)}
+.lp-compare-table td{padding:16px 20px;vertical-align:top;line-height:1.6;border-bottom:1px solid var(--line);color:var(--muted);font-size:13px}
+.lp-compare-table tbody tr:last-child td{border-bottom:none}
+.lp-compare-table td:first-child{font-weight:600;color:var(--fg);white-space:nowrap;width:140px}
+.lp-compare-table td.lp-col-us{color:var(--fg);background:color-mix(in srgb,var(--accent) 4%,var(--panel))}
+.lp-compare-table td.lp-col-us strong{color:var(--accent)}
+.lp-compare-table tbody tr:hover td{background:rgba(255,255,255,.02)}
+.lp-compare-table tbody tr:hover td.lp-col-us{background:color-mix(in srgb,var(--accent) 6%,var(--panel))}
+.lp-compare-cta{margin-top:36px;text-align:center}
+/* Light mode */
+body.site-light .lp-compare-table thead tr{background:color-mix(in srgb,var(--accent) 5%,#fff)}
+body.site-light .lp-compare-table td.lp-col-us{background:color-mix(in srgb,var(--accent) 4%,#fff)}
+body.site-light .lp-compare-table tbody tr:hover td{background:rgba(0,0,0,.02)}
+body.site-light .lp-compare-table tbody tr:hover td.lp-col-us{background:color-mix(in srgb,var(--accent) 6%,#fff)}
