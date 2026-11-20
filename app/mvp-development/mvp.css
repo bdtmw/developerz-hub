@@ -173,6 +173,122 @@
   min-height: 90px;
 }
 
+/* Step 2 sub-heading */
+.mvp-qf-sub {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* Option cards */
+.mvp-qf-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mvp-qf-option {
+  display: block;
+  cursor: pointer;
+  border: 1.5px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+
+.mvp-qf-option:hover {
+  border-color: color-mix(in srgb, var(--accent) 50%, var(--line));
+}
+
+.mvp-qf-option.selected {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 6%, var(--panel));
+}
+
+.mvp-qf-radio {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.mvp-qf-option-inner {
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mvp-qf-option-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.mvp-qf-option-title {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.mvp-qf-option-badge {
+  font-family: 'Space Grotesk', Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  padding: 2px 9px;
+  border-radius: 20px;
+  background: var(--accent);
+  color: #fff;
+  white-space: nowrap;
+}
+
+.mvp-qf-option-badge.outline {
+  background: transparent;
+  border: 1.5px solid var(--line);
+  color: var(--muted);
+}
+
+.mvp-qf-option.selected .mvp-qf-option-badge.outline {
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+  color: var(--accent);
+}
+
+.mvp-qf-option-desc {
+  font-size: 13px;
+  line-height: 1.65;
+  color: var(--muted);
+  margin: 0;
+}
+
+.mvp-qf-option-list {
+  list-style: none;
+  padding: 0;
+  margin: 4px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.mvp-qf-option-list li {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.mvp-qf-option-list li::before {
+  content: '✓';
+  color: var(--accent);
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
 /* Step indicator */
 .mvp-qf-steps {
   display: flex;
