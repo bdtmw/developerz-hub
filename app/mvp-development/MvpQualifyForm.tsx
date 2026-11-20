@@ -1,7 +1,6 @@
 'use client';
-import { useState, useRef, type FormEvent, type ChangeEvent } from 'react';
+import { useState, type FormEvent } from 'react';
 
-type OtpState = 'idle' | 'sending' | 'sent' | 'verifying' | 'verified';
 type ProductType = 'mvp' | 'full' | null;
 
 export default function MvpQualifyForm() {
@@ -13,69 +12,10 @@ export default function MvpQualifyForm() {
   // Identity
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  // OTP
-  const [otp, setOtp] = useState('');
-  const [token, setToken] = useState('');
-  const [otpState, setOtpState] = useState<OtpState>('idle');
-  const [error, setError] = useState('');
-  const otpRef = useRef<HTMLInputElement>(null);
   // Steps
   const [step, setStep] = useState<1 | 2>(1);
   const [productType, setProductType] = useState<ProductType>(null);
   const [submitted, setSubmitted] = useState(false);
-
-  /* ── OTP ── */
-  async function sendCode() {
-    setError('');
-    if (!email.includes('@')) { setError('Enter a valid email first.'); return; }
-    setOtpState('sending');
-    try {
-      const res = await fetch('/api/mvp-otp/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
-      });
-      const data = await res.json();
-      if (!res.ok || data.error) { setError(data.error ?? 'Could not send code. Try again.'); setOtpState('idle'); return; }
-      setToken(data.token);
-      setOtpState('sent');
-      setTimeout(() => otpRef.current?.focus(), 50);
-    } catch {
-      setError('Network error. Try again.');
-      setOtpState('idle');
-    }
-  }
-
-  async function verifyCode(code: string) {
-    if (code.length < 6) return;
-    setOtpState('verifying');
-    setError('');
-    try {
-      const res = await fetch('/api/mvp-otp/verify', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token, code }),
-      });
-      const data = await res.json();
-      if (data.valid) {
-        setOtpState('verified');
-      } else {
-        setError('Incorrect code. Try again.');
-        setOtpState('sent');
-        setOtp('');
-        otpRef.current?.focus();
-      }
-    } catch {
-      setError('Network error. Try again.');
-      setOtpState('sent');
-    }
-  }
-
-  function handleOtpChange(e: ChangeEvent<HTMLInputElement>) {
-    const val = e.target.value.replace(/\D/g, '').slice(0, 6);
-    setOtp(val);
-    if (val.length === 6) verifyCode(val);
-  }
 
   /* ── Steps ── */
   function goToStep2(e: FormEvent) {
@@ -93,7 +33,7 @@ export default function MvpQualifyForm() {
       'MVP DEVELOPMENT BRIEF — DEVELOPERZ HUB',
       '',
       `Name: ${name}`,
-      `Email: ${email} (verified)`,
+      `Email: ${email}`,
       '',
       'WHAT ARE YOU BUILDING?',
       what,
@@ -115,7 +55,7 @@ export default function MvpQualifyForm() {
 
   /* ── Guards ── */
   const briefReady = what.trim().length >= 15 && who.trim().length >= 3 && core.trim().length >= 10;
-  const canContinue = briefReady && otpState === 'verified' && name.trim().length >= 2;
+  const canContinue = briefReady && name.trim().length >= 2 && email.includes('@');
 
   return (
     <form className="mvp-qualify-form" onSubmit={step === 1 ? goToStep2 : handleSubmit} noValidate>
@@ -206,59 +146,19 @@ export default function MvpQualifyForm() {
           />
         </label>
 
-        <div className="mvp-qf-label">
-          <span>Email address</span>
-          <div className="mvp-qf-email-row">
-            <input
-              className="mvp-qf-input"
-              type="email"
-              required
-              maxLength={200}
-              autoComplete="email"
-              value={email}
-              onChange={e => {
-                setEmail(e.target.value);
-                if (otpState !== 'idle') { setOtpState('idle'); setOtp(''); setToken(''); }
-              }}
-              placeholder="alex@company.com"
-              disabled={otpState === 'verified'}
-            />
-            {otpState !== 'verified' && (
-              <button
-                type="button"
-                className="mvp-qf-send-btn"
-                onClick={sendCode}
-                disabled={!email.includes('@') || otpState !== 'idle'}
-              >
-                {otpState === 'sending' ? '…' : 'Send code'}
-              </button>
-            )}
-            {otpState === 'verified' && (
-              <span className="mvp-qf-verified" aria-label="Email verified">✓ Verified</span>
-            )}
-          </div>
-        </div>
-
-        {(otpState === 'sent' || otpState === 'verifying') && (
-          <label className="mvp-qf-label">
-            <span>Verification code <span className="mvp-qf-otp-hint">— sent to {email}</span></span>
-            <input
-              ref={otpRef}
-              className="mvp-qf-input mvp-qf-otp-input"
-              type="text"
-              inputMode="numeric"
-              pattern="[0-9]*"
-              maxLength={6}
-              placeholder="123456"
-              value={otp}
-              onChange={handleOtpChange}
-              disabled={otpState === 'verifying'}
-              autoComplete="one-time-code"
-            />
-          </label>
-        )}
-
-        {error && <p className="mvp-qf-error" role="alert">{error}</p>}
+        <label className="mvp-qf-label">
+          Email address
+          <input
+            className="mvp-qf-input"
+            type="email"
+            required
+            maxLength={200}
+            autoComplete="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+            placeholder="alex@company.com"
+          />
+        </label>
 
         <button type="submit" className="button mvp-qf-submit" disabled={!canContinue}>
           Continue <span aria-hidden="true">→</span>
